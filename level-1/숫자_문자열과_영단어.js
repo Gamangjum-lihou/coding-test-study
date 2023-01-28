@@ -49,3 +49,15 @@ function solution(s) {
 /*
  * 이예슬
  */
+
+
+function solution(s) {
+  var answer = s;
+  const numbers = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+  numbers.forEach((ele, index) => {
+    let arr = answer.split(ele);
+    answer = arr.join(index);
+  });
+    
+ return Number(answer);
+}

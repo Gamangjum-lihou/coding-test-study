@@ -43,3 +43,18 @@ function solution(k, m, score) {
 /*
   이예슬
 */
+function solution(k, m, score) {
+  if(score.length < m) return 0;  
+  
+  let total = 0;
+  
+  score = score.sort((a, b) => b - a);
+  const box = Math.floor(score.length / m);
+  
+  for (let index = 1; index <= box; index++) {
+    let scoreIndex = m * index - 1;
+    total += score[scoreIndex] * m
+  }
+  
+  return total;
+}
