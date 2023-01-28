@@ -9,8 +9,18 @@
 
 # ✏️ **코딩테스트 기출 문제 풀이 및 업로드 Repository**
 
+- [프로그래머스](https://school.programmers.co.kr/learn/challenges?order=acceptance_desc&page=1)
 
+<br>
 
+# 👨‍👩‍👧‍👦 스터디원
+
+[![contributors](https://contrib.rocks/image?repo=Gamangjum-lihou/coding-test-study)](https://github.com/Gamangjum-lihou/coding-test-study/graphs/contributors)
+
+<br>
+
+# 📅 일정 및 풀이
+---
 
 | |1| solution |2| solution |
 |:-:|:-:|:-:|:-:|:-:|
