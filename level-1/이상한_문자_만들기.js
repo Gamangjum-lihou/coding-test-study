@@ -49,6 +49,24 @@ function solution(s) {
  * 김민재
  */
 
+function solution(s) {
+	const words = s.split(' '); // 단어 쪼개기
+	const answer = []; // 값을 저장하기 위함
+	words.forEach((word) => { // 각각의 단어에 대해 밑의 코드를 적용
+		let newWord = ''; //새롭게 만든 단어 저장을 위함
+		word.split('').forEach((letter, index) => { // 단어를 분리해서 각각 밑의 코드 적용
+			if (index % 2 == 0) {
+				newWord += letter.toUpperCase();
+			} else {
+				newWord += letter.toLowerCase();
+			}
+		});
+		answer.push(newWord); // 답에 넣어두기
+	});
+
+	return answer.join(' '); // join으로 마무리
+}
+
 /*
  * 신현호
  */
