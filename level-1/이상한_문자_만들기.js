@@ -71,6 +71,29 @@ function solution(s) {
  * 신현호
  */
 
+function is_even(n) {
+  return n % 2 == 0;
+}
+
+function solution(s) {
+  const str = s.split(" ");
+  let answer = "";
+
+  for (let i = 0; i < str.length; i++) {
+    [...str[i]].forEach((value, index) => {
+        if (is_even(index) && (value >= "a" && value <= "z"))
+            answer += value.toUpperCase();
+        else if (!is_even(index) && (value >= "A" && value <= "Z"))
+            answer += value.toLowerCase();
+        else
+            answer += value;
+    });
+    if (i != str.length - 1)
+      answer += " ";
+  }
+  return answer;
+}
+
 /*
  * 이예슬
  */
