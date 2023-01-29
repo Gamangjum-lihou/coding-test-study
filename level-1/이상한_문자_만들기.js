@@ -97,3 +97,15 @@ function solution(s) {
 /*
  * 이예슬
  */
+function solution(s) {
+  // 영어만 두 문자씩 가져오는 정규식
+  // 여기서 \w는 [A-Za-z0-9_]과 동일하다.
+  const regExp = /(\w)(\w)/g;
+  
+  return s.toUpperCase().replace(regExp, (a)=> {
+      // a = (TR),(HE),(LL) ...
+      // 0번째는 항상 짝수 , 1번째는 항상 홀수
+      return a[0] + a[1].toLowerCase();
+  })
+
+}
