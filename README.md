@@ -22,8 +22,8 @@
 # 📅 일정 및 풀이
 ---
 
-| |1| solution |2| solution |
-|:-:|:-:|:-:|:-:|:-:|
-|1주차(01.16~01.20)|[모의 고사](https://school.programmers.co.kr/learn/courses/30/lessons/42840)| [풀이](https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-1/%EB%AA%A8%EC%9D%98_%EA%B3%A0%EC%82%AC.js) |
-|2주차(01.23~01.28)|[이상한 문자 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/12930)|[풀이](https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-1/%EC%9D%B4%EC%83%81%ED%95%9C_%EB%AC%B8%EC%9E%90_%EB%A7%8C%EB%93%A4%EA%B8%B0.js)|
-|3주차(01.29~02.4)|[다트 게임](https://school.programmers.co.kr/learn/courses/30/lessons/17682)|진행중|
+| |1| solution | 진행 상황 |2| solution |
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|1주차(01.16~01.20)|[모의 고사](https://school.programmers.co.kr/learn/courses/30/lessons/42840)| [풀이](https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-1/%EB%AA%A8%EC%9D%98_%EA%B3%A0%EC%82%AC.js) | ✅ |
+|2주차(01.23~01.28)|[이상한 문자 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/12930)|[풀이](https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-1/%EC%9D%B4%EC%83%81%ED%95%9C_%EB%AC%B8%EC%9E%90_%EB%A7%8C%EB%93%A4%EA%B8%B0.js)| ✅ |
+|3주차(01.29~02.4)|[다트 게임](https://school.programmers.co.kr/learn/courses/30/lessons/17682)|[풀이](https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-1/%EB%8B%A4%ED%8A%B8_%EA%B2%8C%EC%9E%84.js)| 🚴‍♂️ |
