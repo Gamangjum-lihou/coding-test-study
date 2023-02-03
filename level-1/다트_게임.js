@@ -119,6 +119,10 @@ function solution(dartResult) {
  * 이예슬
  */
 
+/*
+ * 이예슬
+ */
+
 function solution(dataString) {
   const types = ['S', 'D', 'T'];
   const results = [];
