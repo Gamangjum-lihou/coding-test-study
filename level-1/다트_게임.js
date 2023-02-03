@@ -118,3 +118,55 @@ function solution(dartResult) {
 /*
  * 이예슬
  */
+
+function solution(dataString) {
+  const types = ['S', 'D', 'T'];
+  const results = [];
+
+  // 옵션상 관련 없는 점수 계산
+  const calculate = (index, exponent) => {
+    // 10일 경우와 이외의 경우 점수 구하기
+    const defaultScore = dataString[index - 2] === '1'  ? 10 : Number(dataString[index - 1]);
+    // 제곱수 구하기
+    const score = Math.pow(defaultScore, exponent);
+    // 배열에 넣기
+    return results.push(score);
+  }
+
+  // 스타상 받았을 경우
+  const start = () => {
+    const { length } = results;
+    // 배열에 1개 이상 있을 경우
+    if(length != 1) {
+      // 전에 받은 점수도 2배로
+      results[length - 2] *= 2;
+    }
+    // 현재 점수 2배로
+    results[length - 1] *= 2;
+  }
+
+  // 아차상 받았을 경우
+  const acha = () => {
+    // 현재 상 마이너스로 변경
+    results[results.length - 1] *= -1;
+  }
+
+  [...dataString].forEach((char, index) => {
+    const exponent = types.findIndex((type) => type === char) + 1
+    
+    if(exponent) {
+      return calculate(index, exponent);
+    }
+    
+    if(char === '*') {
+      start();
+    } 
+    
+    if(char === '#') {
+      acha();
+    }
+  });
+  
+  // 합산점수계산
+  return results.reduce((acc, cur) => acc += cur, 0);
+}
