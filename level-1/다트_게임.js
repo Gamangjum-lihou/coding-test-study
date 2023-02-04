@@ -115,6 +115,35 @@ function solution(dartResult) {
  * 신현호
  */
 
+function solution(dartResult) {
+    let answer = 0;
+    let point = dartResult.match(/\d+/g);
+    let calculated = [];
+    let cnt = 0;
+
+    [...dartResult].forEach(opt => {
+        if (opt === 'S')
+            calculated.push(parseInt(point[cnt++]));
+        else if (opt === 'D')
+            calculated.push(parseInt(point[cnt++]) ** 2);
+        else if (opt === 'T')
+            calculated.push(parseInt(point[cnt++]) ** 3);
+        else if (opt === '*')
+        {
+            calculated[calculated.length - 1] *= 2;
+            calculated[calculated.length - 2] *= 2; 
+        }
+        else if (opt === '#')
+            calculated[calculated.length - 1] *= -1;
+    });
+    
+    calculated.forEach(el => {
+        answer += el;
+    });
+    return answer;
+}
+
+
 /*
  * 이예슬
  */
