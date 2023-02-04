@@ -111,6 +111,31 @@ function solution(dartResult) {
  * 김민재
  */
 
+
+const square = { S: 1, D: 2, T: 3 }; // 제곱 정의
+
+function solution(dartResult) {
+	let darts = dartResult.match(/\d.?\D/g); // 정규식으로 다트 하나씩 분리
+	for (let i = 0; i < darts.length; i++) {
+		const dart = darts[i].split(/([SDT]{1})/); // 숫자 10때문에 정규식 사용
+		let score = Math.pow(Number(dart[0]), square[dart[1]]); // 숫자와 제곱 곱하기
+
+		if (dart[2] === '*') { // 보너스 점수 계산
+			score *= 2;
+
+			if (i > 0) {
+				darts[i - 1] *= 2;
+			}
+		} else if (dart[2] === '#') {
+			score *= -1;
+		}
+
+		darts[i] = score; // 점수 저장
+	}
+
+	return darts.reduce((a, b) => a + b, 0); // 점수 다 더해주기
+}
+
 /*
  * 신현호
  */
