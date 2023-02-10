@@ -21,6 +21,18 @@ function solution(s, skip, index) {
     김민재
 */
 
+const ALPABET = 'abcdefghijklmnopqrstuvwxyz';
+
+function solution(s, skip, index) {
+  const regExp = new RegExp(`[^${skip}]`, 'g');
+  const skipAlpabet = ALPABET.match(regExp);
+
+  return s
+    .split('')
+    .map((char) => skipAlpabet[(skipAlpabet.indexOf(char) + index) % skipAlpabet.length])
+    .join('');
+}
+
 /*
     신현호
 */
