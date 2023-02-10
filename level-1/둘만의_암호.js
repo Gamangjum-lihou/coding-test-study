@@ -54,3 +54,15 @@ function solution(s, skip, index) {
 /*
     이예슬
 */
+function solution(s, skip, index) {
+    // skip에 포함된 문자 제거 정규식
+    const regExp = new RegExp(`[^${skip}]`, 'g');
+    // ㅓㅇ규식 사용해서 skip에 포함된 문자만 제거
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz'.match(regExp);
+    const {length} = alphabet;
+    // index 만큼 뒤로 간 문자 구하기
+    return [...s].map((ele) => {
+        const idx = alphabet.indexOf(ele) + index;
+        return alphabet[idx % length];
+    }).join('');
+}
