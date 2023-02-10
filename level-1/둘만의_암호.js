@@ -24,13 +24,14 @@ function solution(s, skip, index) {
 const ALPABET = 'abcdefghijklmnopqrstuvwxyz';
 
 function solution(s, skip, index) {
+   // skip에 존재하는 단어를 제외한 문자열 생성
   const regExp = new RegExp(`[^${skip}]`, 'g');
   const skipAlpabet = ALPABET.match(regExp);
 
   return s
-    .split('')
-    .map((char) => skipAlpabet[(skipAlpabet.indexOf(char) + index) % skipAlpabet.length])
-    .join('');
+    .split('') //쪼개고
+    .map((char) => skipAlpabet[(skipAlpabet.indexOf(char) + index) % skipAlpabet.length]) // index만큼 뒤의 알파벳을 선택하고
+    .join(''); // 붙인다.
 }
 
 /*
