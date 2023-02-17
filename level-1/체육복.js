@@ -4,6 +4,7 @@
  * 강철원
  */
 
+// 풀이 1
 function solution(n, lost, reserve) {
   sortAscendingOrder(lost, reserve); // 오름차순으로 정렬하기
   [lost, reserve] = filterSameNumber(lost, reserve); // 여벌을 가지고 있지만 도난당한 학생들 제외
@@ -46,6 +47,20 @@ const borrow = (function () {
     return save; // forEach 문이 끝나면 잃어버렸지만 체육복을 빌린 학생 수 return
   };
 })();
+
+// 풀이 2
+// 다른 사람 풀이중에서 제일 처음에 푸신분 것이 괜찮아 보이지만 오답처리가 되어 제가 사용하는 방법을 추가하여 풀어보았습니다. 
+// Math.abs 사용이 좋았던 것 같습니다. 
+function solution(n, lost, reserve) { 
+    const NONEXISTENT = -1
+    const lostNonDuplicated = lost.filter(l=> !reserve.includes(l)).sort((pre,cur)=>pre-cur); 
+    let reserveNonDuplicated = reserve.filter(r=> !lost.includes(r)).sort((pre,cur)=>pre-cur); 
+    return n - lostNonDuplicated.filter(borrower => { 
+        const indexOfStudentCanLend = reserveNonDuplicated.findIndex(lender => Math.abs(lender-borrower) === 1) 
+        if(indexOfStudentCanLend === NONEXISTENT) return true 
+        reserveNonDuplicated.splice(indexOfStudentCanLend, 1) 
+    }).length; 
+}
 
 
 /*
