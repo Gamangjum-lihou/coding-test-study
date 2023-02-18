@@ -31,3 +31,24 @@
 |5주차(02.13~02.17) | [체육복](https://school.programmers.co.kr/learn/courses/30/lessons/42862?language=javascript) |[풀이](https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-1/%EC%B2%B4%EC%9C%A1%EB%B3%B5.js)|✅|`Greedy` |
 |6주차(02.27~03.04) | [같은숫자는 싫어](https://school.programmers.co.kr/learn/courses/30/lessons/12906) |[풀이](https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-1/%EC%B2%B4%EC%9C%A1%EB%B3%B5.js)|🚴‍♂️|`stack` / `queue`|
 
+
+---
+
+## algorithm
+
+
+|algorithm| Name|
+|:-:|:-:|
+|stack/queue| 스택/큐|
+|Greedy| 그리디|
+|dfs/bfs| 너비 & 깊이 우선탐색|
+|Dynamic Programming|동적계획법|
+|Binary Search| 이분 탐색|
+|Sorting| 정렬|
+|Brute-Force| 브루트포스|
+|Hash| 해시|
+|Backtracking| 백 트래킹|
+
+
+
+[링크](https://velog.io/@pppp0722/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%AC%B8%EC%A0%9C-%EC%9C%A0%ED%98%95-%EC%A0%95%EB%A6%AC)
