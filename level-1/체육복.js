@@ -102,3 +102,25 @@ function solution(n, lost, reserve) {
 /*
  * 이예슬
  */
+function solution(n, lost, reserve) {
+  const students = Array(n).fill(1);
+  const clothes = students.map((ele, index) => {
+    if (lost.indexOf(index+1) > -1) ele -= 1;
+    if (reserve.indexOf(index+1) > -1) ele += 1;
+    return ele;
+  });
+  
+  clothes.forEach((ele, index) => {
+    if(ele === 2 && clothes[index-1] === 0) {
+      clothes[index] = 1;
+      clothes[index-1] = 1;
+    }
+      
+    else if(ele === 2 && clothes[index+1] === 0) {
+      clothes[index] = 1;
+      clothes[index+1] = 1;
+    }
+  });
+  
+  return clothes.filter(c => c > 0).length;
+}
