@@ -14,6 +14,7 @@
 
 function solution(arr) {
   const answer = [];
+  // 현재 가르키고있는 문자
   let curr = null;
 
   arr.forEach((el) => {
