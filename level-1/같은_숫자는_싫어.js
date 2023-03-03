@@ -4,6 +4,14 @@
  * 강철원
  */
 
+function solution(arr){
+    return arr.reduce((acc,cur,index,arr) => {
+        if(cur !== arr[index + 1]) acc.push(cur)
+        return acc
+    },[])
+}
+// 현재값과 다음값이 같으면 제거 같지 않으면 push를 통해 뒤로 계속 쌓는 형식
+
 /*
  * 김민재
  */
