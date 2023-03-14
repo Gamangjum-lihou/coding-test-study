@@ -29,8 +29,9 @@
 |3주차(01.29~02.04)|[다트 게임](https://school.programmers.co.kr/learn/courses/30/lessons/17682)|[풀이](https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-1/%EB%8B%A4%ED%8A%B8_%EA%B2%8C%EC%9E%84.js)| ✅|`String Manipulation`|
 |4주차(02.5~02.11) | [둘만의 암호](https://school.programmers.co.kr/learn/courses/30/lessons/155652) |[풀이](https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-1/%EB%91%98%EB%A7%8C%EC%9D%98_%EC%95%94%ED%98%B8.js)|✅|
 |5주차(02.13~02.17) | [체육복](https://school.programmers.co.kr/learn/courses/30/lessons/42862?language=javascript) |[풀이](https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-1/%EC%B2%B4%EC%9C%A1%EB%B3%B5.js)|✅|`Greedy` |
-|6주차(02.27~03.04) | [같은숫자는 싫어](https://school.programmers.co.kr/learn/courses/30/lessons/12906) |[풀이](https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-1/%EC%B2%B4%EC%9C%A1%EB%B3%B5.js)|🚴‍♂️|`stack` / `queue`|
-
+|6주차(02.27~03.04) | [같은숫자는 싫어](https://school.programmers.co.kr/learn/courses/30/lessons/12906) |[풀이](https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-1/%EC%B2%B4%EC%9C%A1%EB%B3%B5.js)|✅|`stack` / `queue`|
+|7주차(03.05~03.12) | [기능 개발](https://school.programmers.co.kr/learn/courses/30/lessons/42586) / [올바른 괄호](https://school.programmers.co.kr/learn/courses/30/lessons/12909)|[풀이](https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%EA%B8%B0%EB%8A%A5%EA%B0%9C%EB%B0%9C.js) / [풀이](https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%EC%98%AC%EB%B0%94%EB%A5%B8_%EA%B4%84%ED%98%B8.js)|✅|`stack` / `queue`|
+|8주차(03.13~03.18) | [프린터](https://school.programmers.co.kr/learn/courses/30/lessons/42587) / [다리를 지나는 트럭](https://school.programmers.co.kr/learn/courses/30/lessons/42583)|[풀이](https://github.com/Gamangjum-lihou/coding-test-study) / [풀이](https://github.com/Gamangjum-lihou/coding-test-study)|🚴‍♂️|`stack` / `queue`|
 
 ---
 
