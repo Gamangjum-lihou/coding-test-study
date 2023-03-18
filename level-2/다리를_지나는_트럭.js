@@ -12,39 +12,25 @@
  * 신현호
  */
 
-// 미완성
 function solution(bridge_length, weight, truck_weights) {
-  const queue = [...truck_weights];
-  const moving = [];
-  const arrive = [];
-  let curr_weight = 0;
-  let curr_amount = 0;
+  const queue = new Array(bridge_length).fill(0);
   let time = 0;
+  let curr_weight = 0;
 
-  while (arrive.length !== truck_weights.length) {
-    let temp_amount = curr_amount + 1;
-    let temp_weight = curr_weight + queue[0];
-
-    if (temp_amount <= bridge_length && temp_weight <= weight) {
-      const node = queue.shift();
-      moving.push(node);
-      curr_amount += 1;
-      curr_weight += node;
-      time += 1;
-    } else {
-      time += 1;
+  while (queue.length) {
+    curr_weight -= queue.shift();
+    if (truck_weights.length) {
+      if (truck_weights[0] + curr_weight <= weight) {
+        const curr = truck_weights.shift();
+        queue.push(curr);
+        curr_weight += curr;
+      } else {
+        queue.push(0);
+      }
     }
-
-    if (moving.length) {
-      const node = moving.shift();
-      arrive.push(node);
-      curr_amount -= 1;
-      curr_weight -= node;
-      time += 1;
-    }
+    time += 1;
   }
-
-  return time + bridge_length;
+  return time;
 }
 
 /*
