@@ -1,4 +1,4 @@
-// https://school.programmers.co.kr/learn/courses/30/lessons/42842#qna
+// https://school.programmers.co.kr/learn/courses/30/lessons/42842
 
 /*
  * 강철원
