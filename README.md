@@ -50,3 +50,9 @@
 |    Backtracking     |      백 트래킹       |
 
 [링크](https://velog.io/@pppp0722/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%AC%B8%EC%A0%9C-%EC%9C%A0%ED%98%95-%EC%A0%95%EB%A6%AC)
+
+---
+
+## figma
+
+[피그마 링크](https://www.figma.com/file/2HtqkiQWiDqukyqdtmFft1/Untitled?t=25eXnnOtM082Xwhs-0)
