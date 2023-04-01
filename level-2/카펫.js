@@ -4,6 +4,33 @@
  * 강철원
  */
 
+function solution(brown, yellow) {
+    // 약수 arr
+    let divisor = getDivisor(yellow)
+
+    // case1 과 case2 모두 true만 filter
+    const result = divisor.filter(([a,b]) => {
+        const case1 = (a+2)*(b+2) === brown + yellow
+        const case2 = a*b === yellow
+        return case1 && case2
+    })
+    
+    // yellow의 약수이기에 brown은 포함한 전체 가로세로 길이를 구하기 위해 +2를 해줌
+    return result[0].map(x => x+2).sort((a,b) => b-a)
+}
+
+// 약수만 arr에 넣기
+function getDivisor(yellow) {
+    const arr = []
+    for(let i=0; i <= yellow; i++ ){
+        const divide = yellow / i
+        if(Number.isInteger(divide)){
+            arr.push([i, divide])
+        }
+    }
+    return arr
+}
+
 /*
  * 김민재
  */
