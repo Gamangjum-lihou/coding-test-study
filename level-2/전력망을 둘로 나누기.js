@@ -27,11 +27,9 @@ function solution(n, wires) {
 
     while (isLine) {
       isLine = false;
-      let index = 0;
 
-      while (index < sliceWires.length) {
+      for (let index = 0; index < sliceWires.length; index++) {
         const currWire = sliceWires[index];
-
         // wire가 연결되었을 때
         if (firstLine.has(currWire[0]) || firstLine.has(currWire[1])) {
           // firstLine으로 이동
@@ -39,10 +37,8 @@ function solution(n, wires) {
           firstLine.add(currWire[0]);
           firstLine.add(currWire[1]);
 
+          // 전선이 순서대로 있지 않을 수 있기 때문에
           isLine = true;
-        } else {
-          // 연결 안되었으면 index++
-          index++;
         }
       }
     }
@@ -55,6 +51,7 @@ function solution(n, wires) {
 
   return answer;
 }
+
 
 
 /*
