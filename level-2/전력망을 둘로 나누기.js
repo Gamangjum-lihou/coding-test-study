@@ -52,8 +52,6 @@ function solution(n, wires) {
   return answer;
 }
 
-
-
 /*
  * 신현호
  */
