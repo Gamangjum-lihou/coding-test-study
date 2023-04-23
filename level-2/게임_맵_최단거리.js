@@ -21,7 +21,7 @@ function solution(maps) {
     return -1;
 }
 
-function dfs(maps) {
+function bfs(maps) {
   const queue = [];
   const visited = [];
 
