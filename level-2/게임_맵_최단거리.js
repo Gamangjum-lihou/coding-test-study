@@ -14,7 +14,7 @@ const start = {x: 0, y: 0};
 const arrive = [];
 
 function solution(maps) {
-  dfs(maps);
+  bfs(maps);
   if (arrive.length)
     return Math.min(...arrive);
   else
