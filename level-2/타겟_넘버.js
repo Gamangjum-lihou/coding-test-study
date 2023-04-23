@@ -1,4 +1,4 @@
-// 링크
+// https://school.programmers.co.kr/learn/courses/30/lessons/43165?language=javascript
 
 /*
  * 강철원
@@ -58,4 +58,26 @@ function dfs(curr, idx, numbers, target) {
 
   dfs(curr + numbers[idx], idx + 1, numbers, target);
   dfs(curr - numbers[idx], idx + 1, numbers, target);
+}
+
+
+/*
+ * 이보리
+ */
+
+function solution(numbers, target) {
+    let answer = 0;
+    
+    const dfs = (index, sum) => {
+        if(index < numbers.length) {
+            dfs(index + 1, sum + numbers[index]);
+            dfs(index + 1, sum - numbers[index]);
+        } else {
+            if(sum === target) answer++;
+        }
+    }
+    
+    dfs(0, 0);
+    
+    return answer;
 }
