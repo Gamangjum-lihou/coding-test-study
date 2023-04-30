@@ -133,12 +133,36 @@
   <tr>
     <td class="tg-abip" rowspan="2">12주차<br>(4. 9 ~ 4. 15)</td>
     <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/86971" target="_blank" rel="noopener noreferrer">전력망 둘로 나누기</a></td>
-    <td class="tg-abip"></td>
-    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">🚴‍♂️</span></td>
+    <td class="tg-abip"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%EC%A0%84%EB%A0%A5%EB%A7%9D%EC%9D%84%20%EB%91%98%EB%A1%9C%20%EB%82%98%EB%88%84%EA%B8%B0.js" target="_blank" rel="noopener noreferrer">풀이</a></td>
+    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
     <td class="tg-abip" rowspan="2">완전 탐색</td>
   </tr>
   <tr>
     <td class="tg-c3ow"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/84512" target="_blank" rel="noopener noreferrer">모음 사전</a></td>
+    <td class="tg-c3ow"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%EB%AA%A8%EC%9D%8C%EC%82%AC%EC%A0%84.js" target="_blank" rel="noopener noreferrer">풀이</a></td>
+    <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
+  </tr>
+  <tr>
+    <td class="tg-abip" rowspan="2">13주차<br>(4. 16 ~ 4. 22)</td>
+    <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/43165" target="_blank" rel="noopener noreferrer">타겟 넘버</a></td>
+    <td class="tg-abip"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%ED%83%80%EA%B2%9F_%EB%84%98%EB%B2%84.js" target="_blank" rel="noopener noreferrer">풀이</a></td>
+    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
+    <td class="tg-abip" rowspan="2">DFS / BFS</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/1844" target="_blank" rel="noopener noreferrer">게임 맵 최단거리</a></td>
+    <td class="tg-c3ow"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%EA%B2%8C%EC%9E%84_%EB%A7%B5_%EC%B5%9C%EB%8B%A8%EA%B1%B0%EB%A6%AC.js" target="_blank" rel="noopener noreferrer">풀이</a></td>
+    <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
+  </tr>
+  <tr>
+    <td class="tg-abip" rowspan="2">14주차<br>(4. 23 ~ 4. 29)</td>
+    <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/43162" target="_blank" rel="noopener noreferrer">네트워크</a></td>
+    <td class="tg-abip"></td>
+    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">🚴‍♂️</span></td>
+    <td class="tg-abip" rowspan="2">DFS / BFS</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/43163" target="_blank" rel="noopener noreferrer">단어 변환</a></td>
     <td class="tg-c3ow"></td>
     <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">🚴‍♂️</span></td>
   </tr>
