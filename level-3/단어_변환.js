@@ -4,6 +4,44 @@
  * 강철원
  */
 
+function solution(begin, target, words) {
+  if (!words.includes(target)) return 0;
+  const visited = { [begin] : 0 };
+  const queue = [begin];
+
+  while(queue.length) {
+      // 현재 단어 꺼낸다.
+    const cur = queue.shift();
+    
+      // 현재 단어와 타겟 단어가 같으면 바로 종료
+    if(cur === target) break;
+    
+
+    for(const word of words) {
+      if(isConnected(word, cur) && !visited[word]) {
+        visited[word] = visited[cur] + 1;
+        queue.push(word);
+      }
+      
+    }
+              console.log(visited)
+  }
+    
+  return visited[target]
+}
+
+const isConnected = (word, cur) => {
+  let count = 0;
+  
+  for(let i = 0; i < word.length; i++) {
+    if(word[i] !== cur[i]) count++;
+  }
+  
+    // 한 번에 한 개의 알파벳만 바꿀 수 있기에 
+    // 같은 위치에 알파벳이 같은것이 1개일 때만 true
+  return count === 1 ? true : false;
+}
+
 /*
  * 신현호
  */
