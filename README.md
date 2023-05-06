@@ -157,12 +157,24 @@
   <tr>
     <td class="tg-abip" rowspan="2">14주차<br>(4. 23 ~ 4. 29)</td>
     <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/43162" target="_blank" rel="noopener noreferrer">네트워크</a></td>
+    <td class="tg-abip"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-3/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC.js">풀이</a></td>
+    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
+    <td class="tg-abip" rowspan="2">DFS / BFS</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/43163" target="_blank" rel="noopener noreferrer">단어 변환</a></td>
+    <td class="tg-c3ow"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-3/%EB%8B%A8%EC%96%B4_%EB%B3%80%ED%99%98.js">풀이</a></td>
+    <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
+  </tr>
+  <tr>
+    <td class="tg-abip" rowspan="2">15주차<br>(4. 30 ~ 5. 6)</td>
+    <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/43164" target="_blank" rel="noopener noreferrer">여행경로/a></td>
     <td class="tg-abip"></td>
     <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">🚴‍♂️</span></td>
     <td class="tg-abip" rowspan="2">DFS / BFS</td>
   </tr>
   <tr>
-    <td class="tg-c3ow"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/43163" target="_blank" rel="noopener noreferrer">단어 변환</a></td>
+    <td class="tg-c3ow"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/87694" target="_blank" rel="noopener noreferrer">아이템 줍기</a></td>
     <td class="tg-c3ow"></td>
     <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">🚴‍♂️</span></td>
   </tr>
