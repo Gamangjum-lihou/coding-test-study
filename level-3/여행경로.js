@@ -33,6 +33,34 @@ function solution(tickets) {
  * 신현호
  */
 
+const route = [];
+
+function solution(tickets) {
+    const visited = new Array(tickets.length).fill(0);
+    
+    dfs(tickets.sort(), 'ICN', 0, visited);
+    return route;
+}
+
+function dfs(tickets, start, idx, visited) { 
+    route.push(start);
+    if (idx === tickets.length)
+        return true;
+    
+    for (let i = 0; i < tickets.length; i++) {
+        if (tickets[i][0] === start && !visited[i]) {
+            visited[i] = 1;
+            if (dfs(tickets, tickets[i][1], idx + 1, visited))
+                return true;
+            visited[i] = 0;
+        }
+    }
+    route.pop();
+    
+    return false;
+}
+
+
 /*
  * 이보리
  */
