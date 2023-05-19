@@ -4,6 +4,21 @@
  * 강철원
  */
 
+function solution(n, m, section) {
+  // 1. early return 먼저 제거
+
+  // 1) 롤러의 길이가 1이면 result = section.length 이 된다.
+  if (m === 1) return section.length;
+
+  let result = 0;
+  while (section.length) {
+    const removed = Array.from({ length: m }, (v, i) => section[0] + i);
+    section = section.filter((value) => !removed.includes(value));
+    result += 1;
+  }
+  return result;
+}
+
 /*
  * 신현호
  */
