@@ -168,15 +168,27 @@
   </tr>
   <tr>
     <td class="tg-abip" rowspan="2">15주차<br>(4. 30 ~ 5. 6)</td>
-    <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/43164" target="_blank" rel="noopener noreferrer">여행경로/a></td>
-    <td class="tg-abip"></td>
-    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">🚴‍♂️</span></td>
+    <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/43164" target="_blank" rel="noopener noreferrer">여행경로</td>
+    <td class="tg-abip"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-3/%EC%97%AC%ED%96%89%EA%B2%BD%EB%A1%9C.js">풀이</a></td>
+    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
     <td class="tg-abip" rowspan="2">DFS / BFS</td>
   </tr>
   <tr>
     <td class="tg-c3ow"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/87694" target="_blank" rel="noopener noreferrer">아이템 줍기</a></td>
     <td class="tg-c3ow"></td>
-    <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">🚴‍♂️</span></td>
+    <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">😱</span></td>
+  </tr>
+   <tr>
+    <td class="tg-abip" rowspan="2">16주차<br>(5. 8 ~ 5. 13)</td>
+    <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/42860">조이스틱</a></td>
+    <td class="tg-abip"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%EC%A1%B0%EC%9D%B4%EC%8A%A4%ED%8B%B1.js">풀이</a></td>
+    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
+    <td class="tg-abip" rowspan="2">Greedy</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%ED%81%B0_%EC%88%98_%EB%A7%8C%EB%93%A4%EA%B8%B0.js" target="_blank" rel="noopener noreferrer">큰수만들기</a></td>
+    <td class="tg-c3ow"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%ED%81%B0_%EC%88%98_%EB%A7%8C%EB%93%A4%EA%B8%B0.js">풀이</a></td>
+    <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
   </tr>
 </tbody>
 </table>
