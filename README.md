@@ -195,7 +195,7 @@
     <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/176963">추억점수</a></td>
     <td class="tg-abip"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-1/%EC%B6%94%EC%96%B5_%EC%A0%90%EC%88%98.js">풀이</a></td>
     <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
-    <td class="tg-abip" rowspan="2">Greedy</td>
+    <td class="tg-abip" rowspan="2"></td>
   </tr>
   <tr>
     <td class="tg-c3ow"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/161989" target="_blank" rel="noopener noreferrer">덧칠하기</a></td>
