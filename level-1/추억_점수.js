@@ -85,3 +85,23 @@ function solution(name, yearning, photo) {
 /*
  * 채희수
  */
+
+function solution(name, yearning, photo) {
+    var answer = [];
+    
+    // 이름과 그리움 점수 바인딩
+    const yearningScore = new Map();
+    for(let i in name) {
+        yearningScore.set(name[i], yearning[i])
+    }
+    // photo마다 그리움 점수 계산
+    for (let piece of photo) {
+        let sum = 0;
+        for (let name of piece) {
+            sum += yearningScore.get(name) || 0;
+        }
+        answer.push(sum);
+    }
+    
+    return answer;
+}
