@@ -57,3 +57,15 @@ function solution(n, m, section) {
 /*
  * 채희수
  */
+
+function solution(n, m, section) {
+    var answer = 0;
+    var next = 0;
+    for (let sec of section) {
+        if (sec < next) continue;
+        answer +=1;
+        next = sec+m;
+    }
+    
+    return answer;
+}
