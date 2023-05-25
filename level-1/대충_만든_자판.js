@@ -57,3 +57,34 @@ function solution(keymap, targets) {
 /*
  * 채희수
  */
+
+function solution(keymap, targets) {
+    var keyMin = {}
+    
+    // 각 키의 최소값 구하기
+    for (let key of keymap) {
+        for (let i in key) {
+            keyMin[key[i]] 
+                ? keyMin[key[i]] = Math.min(+i+1, keyMin[key[i]])
+                : keyMin[key[i]] = +i+1;
+        }
+    }
+    
+    // targets을 순회하면서 점수 구하기
+    var answer = [];
+    for (let t of targets) {
+        let sum = 0;
+        
+        for (let i in t) {
+            if (keyMin[t[i]]) {
+                sum += keyMin[t[i]];
+            } else {
+                sum = -1;
+                break;
+            }
+        }
+        answer.push(sum);
+    }
+
+    return answer;
+}
