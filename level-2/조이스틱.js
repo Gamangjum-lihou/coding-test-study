@@ -60,8 +60,51 @@ function solution(name) {
  * 이보리
  */
 
+// 조이스틱 상/하 이동 카운트 함수
+const getUpDownCount = (string) => {
+    // 알파벳 배열
+    const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    let count = 0;
+    
+    for (let i = 0; i < string.length; i++) {
+        // 다음 알파벳 방향으로 카운트
+        const startIndex = alphabet.indexOf(string[i]);
+        // 이전 알파벳 방향으로 카운트
+        const endIndex = alphabet.length - alphabet.indexOf(string[i]);
+        // 다음/이전 알파벳 방향 중 카운트 수가 더 적은 횟수를 저장
+        count += Math.min(startIndex, endIndex);
+    }
+    
+    return count;
+}
 
+function solution(name) {
+    const length = name.length;
+    const upDownCount = getUpDownCount(name);
+    
+    // 왼쪽에서 오른쪽으로 끝까지 이동할 경우
+    const moveToRight = length - 1;
+    // moveCount 초기화
+    let moveCount = moveToRight;
+    
+    [...name].forEach((_, index) => {
+        // 다음 인덱스
+        let nextIndex = index + 1;
+        // A가 반복되는 인덱스 체크
+        while(nextIndex < length && name[nextIndex] === "A") {
+            nextIndex++;
+        }
+        
+        // 오른쪽으로 이동했다가 반복되는 A를 만나면 왼쪽으로 이동했을 경우 횟수
+        const moveToRightTurnLeft = (index * 2) + length - nextIndex;
+        // 왼쪽으로 이동했다가 반복되는 A를 만나면 오른쪽으로 이동했을 경우 횟수
+        const moveToLeft = index + 2 * (length - nextIndex);
+        
+        moveCount = Math.min(moveCount, moveToRightTurnLeft, moveToLeft);
+    })
 
+    return moveCount + upDownCount;
+}
 
 /*
  * 채희수
