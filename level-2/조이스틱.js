@@ -36,6 +36,25 @@ function solution(name) {
  * 신현호
  */
 
+function solution(name) {
+    let answer = 0;
+    let min = name.length - 1;
+
+    [...name].map((value, idx) => {
+        let curr = idx + 1;
+
+        // A기준 이동거리와 Z기준 이동거리 비교
+        answer += Math.min(
+          Math.abs(value.charCodeAt(0) - 65),
+          Math.abs(value.charCodeAt(0) - 91));
+        // 연속되는 A의 경우 + 1
+        while (curr < name.length && name[curr] === 'A')
+            curr += 1;
+        // 순서대로 가는것, 뒤로 돌아가는것, 뒷부분을 먼저 입력하는것 중에 최솟값을 구함
+        min = Math.min(min, idx * 2 + name.length - curr, idx + 2 * (name.length - curr));
+    });
+    return answer + min;
+}
 
 /*
  * 이보리
