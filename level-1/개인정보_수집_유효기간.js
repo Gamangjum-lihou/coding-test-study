@@ -59,3 +59,40 @@ function solution(today, terms, privacies) {
 /*
  * 채희수
  */
+const DAYS_OF_MONTH = 28;
+const DAYS_OF_YEAR = 12 * 28;
+const MIN_YEAR = 2000;
+
+function solution(today, terms, privacies) {
+    // 날짜를 타임스탬프로 변환해서 계산
+    // 약관 종류와 유효기간 바인딩
+	const periodMap = new Map();
+	terms.map((term) => {
+		const v = term.split(" ");
+		periodMap.set(v[0], v[1] * DAYS_OF_MONTH);
+	})
+
+    // 약관 종류에 따라 만료 일자로 계산해 새로운 배열에 담는다
+	const expirationTimestamp = [];
+	privacies.map((privacy) => {
+		const p = privacy.split(" ");
+		let collectedTimestamp = dateToTimestamp(p[0])
+		expirationTimestamp.push(collectedTimestamp + periodMap.get(p[1]))
+	})
+
+    // 만료 일자와 오늘 날짜를 비교해 파기가 필요한 개인정보 번호를 찾는다
+	let answer = [];
+	const todayTimestamp = dateToTimestamp(today)
+	expirationTimestamp.map((timestamp, i) => {
+		todayTimestamp >= timestamp ? answer.push(i + 1) : "";
+	})
+
+	return answer;
+}
+
+function dateToTimestamp(date) {
+	const [yy, mm, dd] = date.split(".")
+	const timestamp = (+yy - MIN_YEAR) * DAYS_OF_YEAR + +mm * DAYS_OF_MONTH + +dd
+
+	return timestamp
+}
