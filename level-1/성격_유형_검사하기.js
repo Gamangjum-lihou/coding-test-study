@@ -50,8 +50,7 @@ function calculateScores(scores) {
     // n번 지표에서 성격 유형 점수가 같을 때
     if (scores[order[i]] === scores[order[i + 1]]) {
       // 사전 순으로 빠른 성격 유형을 검사자의 성격 유형으로 판단
-      const min = Math.min(order[i].charCodeAt(), order[i].charCodeAt());
-      result += String.fromCharCode(min);
+      result += order[i]
       continue;
     }
     // n번 지표에서 성격 유형 검사 점수들이 크거나 작을 때
