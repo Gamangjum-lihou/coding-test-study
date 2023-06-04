@@ -126,28 +126,31 @@ function solution(survey, choices) {
  * 채희수
  */
 
-const choiceMark = { '1': 3, '2': 2, '3': 1, '4': 0, '5': 1, '6': 2, '7': 3 };
-const types = [['R', 'T'], ['C', 'F'], ['J', 'M'], ['A', 'N']];
+const CHOICE_MARK = { 1: 3, 2: 2, 3: 1, 4: 0, 5: 1, 6: 2, 7: 3 };
+const TYPES = ["R", "T", "C", "F", "J", "M", "A", "N"];
 
 function solution(survey, choices) {
-	// 각 타입을 카운트하기 위해 초기값 세팅
-	const typesMark = { 'R': 0, 'T': 0, 'C': 0, 'F': 0, 'J': 0, 'M': 0, 'A': 0, 'N': 0 };
-	
-	// choice 에 따라 점수 매핑
-	choices.map((choice, i) => {
-		if (choice > 4) {
-			typesMark[survey[i][1]] += choiceMark[choice];
-		}
-		if (choice < 4) {
-			typesMark[survey[i][0]] += choiceMark[choice];
-		}
-	})
+  // 각 타입을 카운트하기 위해 초기값 세팅
+  const typesMark = {};
+  TYPES.forEach((type) => (typesMark[type] = 0));
 
-	// 각 지표마다 성격 유형값을 비교 후 큰 값이 있다면 바꾸주기
-	let answer = ['R', 'C', 'J', 'A'];
-	types.map((type, i) => {
-		if (typesMark[type[0]] < typesMark[type[1]]) answer[i] = type[1];
-	})
+  // choice 에 따라 점수 매핑
+  choices.map((choice, i) => {
+    const [agree, disagree] = survey[i];
 
-	return answer.join("");
+    if (choice > 4) typesMark[disagree] += CHOICE_MARK[choice];
+    if (choice < 4) typesMark[agree] += CHOICE_MARK[choice];
+  });
+
+  // 값 비교 후 유형 생성
+  const answer = [];
+  for (let i = 0; i < TYPES.length; i += 2) {
+    const [agree, disagree] = [TYPES[i], TYPES[i + 1]];
+    typesMark[agree] < typesMark[disagree]
+      ? answer.push(disagree)
+      : answer.push(agree);
+  }
+
+  return answer.join("");
 }
+
