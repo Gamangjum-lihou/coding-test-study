@@ -85,7 +85,7 @@ const OBSTACLE = "X";
 
 function solution(park, routes) {
   let [h, w] = [0, 0];
-  let [max_h, max_w] = [park.length - 1, park[0].length - 1];
+  const [max_h, max_w] = [park.length - 1, park[0].length - 1];
 
   // 시작포인트 셋팅
   for (let index in park) {
@@ -97,7 +97,7 @@ function solution(park, routes) {
   }
 
   // 이동 루트 확인하기
-  routes.forEach((route, index) => {
+  routes.forEach((route) => {
     const [direction, space] = route.split(" ");
     let new_h = h;
     let new_w = w;
@@ -135,7 +135,6 @@ function solution(park, routes) {
     for (h; h <= new_h; h++) {
       if (park[h][w] === OBSTACLE) return false;
     }
-
     return true;
   }
 
@@ -144,7 +143,6 @@ function solution(park, routes) {
     for (w; w >= new_w; w--) {
       if (park[h][w] === OBSTACLE) return false;
     }
-
     return true;
   }
 
@@ -153,7 +151,6 @@ function solution(park, routes) {
     for (h; h >= new_h; h--) {
       if (park[h][w] === OBSTACLE) return false;
     }
-
     return true;
   }
 
