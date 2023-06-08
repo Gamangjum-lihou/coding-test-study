@@ -4,6 +4,43 @@
  * 강철원
  */
 
+function solution(id_list, report, k) {
+  // {신고 받은 유저1: [신고한 유저1, 신고한 유저2]}  & 중복 x
+  const reportedUsers = getUsers(report);
+  const feedbackEmailRecipientsWithCount = getRecipients(reportedUsers, k);
+  return id_list.map((user) => feedbackEmailRecipientsWithCount[user] ?? 0);
+}
+
+function getUsers(report) {
+  const users = {};
+  const length = report.length;
+  for (let i = 0; i < length; i++) {
+    const [reporter, reportedUser] = report[i].split(' ');
+    if (users[reportedUser]) {
+      users[reportedUser] = [...new Set([...users[reportedUser], reporter])];
+      continue;
+    }
+    users[reportedUser] = [reporter];
+  }
+  return users;
+}
+
+function getRecipients(reportedUsers, usageStopCriteria) {
+  const recipients = {};
+  for (let reportedUser in reportedUsers) {
+    if (isUsageSuspended(reportedUsers[reportedUser], usageStopCriteria)) {
+      reportedUsers[reportedUser].forEach((reporter) => {
+        recipients[reporter] = (recipients[reporter] || 0) + 1;
+      });
+    }
+  }
+  return recipients;
+}
+
+function isUsageSuspended(reporters, usageStopCriteria) {
+  return reporters.length >= usageStopCriteria;
+}
+
 /*
  * 신현호
  */
