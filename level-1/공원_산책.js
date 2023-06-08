@@ -3,52 +3,23 @@
 /*
  * 강철원
  */
-
 function solution(park, routes) {
   // route 테스트용 객체
   // const routeTest = {};
-
   let [nowX, nowY] = findStartingPoint(park);
-
+  const coordinate = { nowX, nowY };
   routes.forEach((route, index) => {
     const [direction, move] = route
       .split(' ')
       .map((value) => (Number(value) ? +value : value));
-    const coordinate = { nowX, nowY };
 
-    if (direction === 'E') {
-      if (isOutsidePark(direction, coordinate, move, park)) return;
-      if (isObstacle(direction, coordinate, move, park)) return;
-      nowX += move;
-      // routeTest[index] = true;
-      return;
-    }
-
-    if (direction === 'W') {
-      if (isOutsidePark(direction, coordinate, move, park)) return;
-      if (isObstacle(direction, coordinate, move, park)) return;
-      nowX -= move;
-      // routeTest[index] = true;
-      return;
-    }
-
-    if (direction === 'S') {
-      if (isOutsidePark(direction, coordinate, move, park)) return;
-      if (isObstacle(direction, coordinate, move, park)) return;
-      nowY += move;
-      // routeTest[index] = true;
-      return;
-    }
-    if (direction === 'N') {
-      if (isOutsidePark(direction, coordinate, move, park)) return;
-      if (isObstacle(direction, coordinate, move, park)) return;
-      nowY -= move;
-      // routeTest[index] = true;
-      return;
-    }
+    if (isOutsidePark(direction, coordinate, move, park)) return;
+    if (isObstacle(direction, coordinate, move, park)) return;
+    moveCoordinate(direction, coordinate, move);
+    // routeTest[index] = true;
   });
 
-  return [nowY, nowX];
+  return [coordinate.nowY, coordinate.nowX];
 }
 
 function findStartingPoint(park) {
@@ -94,6 +65,12 @@ function isObstacle(direction, { nowX, nowY }, move, park) {
   }
 }
 
+function moveCoordinate(direction, coordinate, move) {
+  if (direction === 'E') coordinate.nowX += move;
+  if (direction === 'W') coordinate.nowX -= move;
+  if (direction === 'S') coordinate.nowY += move;
+  if (direction === 'N') coordinate.nowY -= move;
+}
 
 /*
  * 신현호
