@@ -45,6 +45,35 @@ function isUsageSuspended(reporters, usageStopCriteria) {
  * 신현호
  */
 
+function solution(id_list, report, k) {
+  const answer = new Array(id_list.length).fill(0);
+  // 신고당한사람을 중복제거하기 위한 set 활용
+  const reported = new Set();
+
+  id_list.forEach(user => {
+    reported[user] = [];
+  })
+
+  // 신고 배열을 순회하면서 report_id를 key로 가지는 set value 에 userId가 포함되어있지 않다면 값 push
+  report.map(user => {
+    // 구조 분해 할당을 통해 user_id와 report_id 가져오기
+    const [user_id, report_id] = user.split(" ");
+    if(!reported[report_id].includes(user_id))
+      reported[report_id].push(user_id);
+  })
+
+  // reported set 순회를 통해 k번 이상 신고되었는지 확인
+  for(const key in reported) {
+    if(reported[key].length >= k) {
+      reported[key].map(user => {
+        answer[id_list.indexOf(user)]++;
+      })
+    }
+  }
+
+  return answer;
+}
+
 /*
  * 이보리
  */
