@@ -76,6 +76,72 @@ function moveCoordinate(direction, coordinate, move) {
  * 신현호
  */
 
+function solution(park, routes) {
+  // 현위치 저장을 위한 객체
+  const pos = {
+    x: 0,
+    y: 0,
+  };
+  // 움직임에 대한 dict 선언
+  const move = {
+    E: [0, 1],
+    W: [0, -1],
+    N: [-1, 0],
+    S: [1, 0],
+  }
+
+  park.forEach((line, lineIdx) => {
+    // spread 연산자를 사용하여 문자열 -> 배열로 전환 후 indexOf 사용
+    const startIdx = [...line].indexOf('S');
+
+    // indexOf의 경우 찾지 못하면 -1, 찾으면 idx값을 갖는다.
+    if (startIdx > -1) {
+      pos.y = lineIdx;
+      pos.x = startIdx;
+    }
+  });
+
+  routes.forEach((route) => {
+    // 구조분해할당을 통해 방향과 움직임의 횟수를 받아온다
+    const [dir, cnt] = route.split(" ");
+    // tmp로 임시 이동 좌표를 설정한다
+    const tmp = {
+      y: pos.y,
+      x: pos.x,
+    };
+    // 정상적으로 움직였는지 여부 확인
+    let flag = false;
+
+    // 움직임의 횟수만큼 for문 반복
+    for (let i = 0; i < cnt; i++) {
+      // dict 객체를 key로 조회 후 임시변수에 더해준다
+      tmp.y += move[dir][0];
+      tmp.x += move[dir][1];
+
+      // 범위 확인
+      if (tmp.y < 0 || tmp.y > park.length - 1 ||
+        tmp.x < 0 || tmp.x > park[0].length - 1) {
+        flag = true;
+        break;
+      }
+
+      // 장애물 확인
+      if (park[tmp.y][tmp.x] === 'X') {
+        flag = true;
+        break;
+      }
+    }
+
+    // 정상적인 움직임이라면 현재 위치 수정
+    if (!flag) {
+      pos.y = tmp.y;
+      pos.x = tmp.x;
+    }
+  });
+
+  return [pos.y, pos.x];
+}
+
 /*
  * 채희수
  */
