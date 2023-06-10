@@ -1,4 +1,4 @@
-// 링크
+// https://school.programmers.co.kr/learn/courses/30/lessons/172928
 
 /*
  * 강철원
@@ -160,3 +160,60 @@ function solution(park, routes) {
 /*
  * 이보리
  */
+
+/*
+ * 시작 지점을 반환 함수
+ * @params { park: string[] }
+ */
+const getStartPoint = (park) => {
+    const start = 'S';
+    const startPoint = [];
+    park.forEach((point, index) => {
+        if(point.includes(start)) {
+            startPoint.push(index, point.indexOf(start));
+        }
+    })
+    return startPoint;
+}
+
+function solution(park, routes) {
+    const max_h = park.length;
+    const max_w = park[0].length;
+    const block = 'X';
+    // 이동할 방향, 거리 객체
+    const directions = {
+        "E": [0, 1],
+        "W": [0, -1],
+        "S": [1, 0],
+        "N": [-1, 0],
+    }
+    // 시작 지점으로 초기화
+    let point = getStartPoint(park);
+    
+    routes.forEach((route) => {
+        const [direction, count] = route.split(' ');
+        const [move_h, move_w] = directions[direction];
+        
+        // 임시 지점을 저장할 tempPoint 변수 선언
+        let tempPoint = point;
+        let canMove = true;
+        
+        for (let i = 0; i < count; i++) {
+            const temp_h = tempPoint[0] + move_h;
+            const temp_w = tempPoint[1] + move_w;
+            
+            tempPoint = [temp_h, temp_w];
+            
+            // 공원을 벗어나거나 장애물이 있는지 확인 
+            if(temp_h < 0 || temp_h >= max_h || temp_w < 0 || temp_w >= max_w || park[temp_h][temp_w] === block) {
+                canMove = false;
+                break; // 움직일 수 없으므로 for문 종료
+            }
+            canMove = true;
+        }
+        // 움직일 수 있다면 해당 지점로 이동
+        if(canMove) point = tempPoint;
+    });
+    // 마지막 지점 반환
+    return point;
+}
