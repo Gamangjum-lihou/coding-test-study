@@ -139,3 +139,40 @@ function solution(id_list, report, k) {
 /*
  * 채희수
  */
+
+function solution(id_list, report, k) {
+  // 리포터 작성, 중복 신고 제거
+  const reporter = {};
+  report.forEach((issue) => {
+    const [l, r] = issue.split(" ");
+    reporter[l]
+      ? (reporter[l] = [...new Set([...reporter[l], r])])
+      : (reporter[l] = [r]);
+  });
+
+  // 신고당한 횟수 count
+  const countOfReports = {};
+  id_list.forEach((id) => (countOfReports[id] = 0));
+  for (let ids of Object.values(reporter)) {
+    ids.forEach((id) => countOfReports[id]++);
+  }
+
+  // 이용 정지 유저 체크
+  const suspendedId = [];
+  for (let [id, count] of Object.entries(countOfReports)) {
+  if (count >= k) suspendedId.push(id);
+  }
+
+  // 유저마다 이메일 발송 횟수 체크
+  if (suspendedId.length == 0) return Array(id_list.length).fill(0);
+
+  const answer = Array(id_list.length).fill(0);
+  suspendedId.forEach((id) => {
+    for (let [l, r] of Object.entries(reporter)) {
+      if (r.includes(id)) answer[id_list.indexOf(l)]++;
+    }
+  });
+
+
+  return answer;
+}
