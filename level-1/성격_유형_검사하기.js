@@ -66,6 +66,37 @@ function calculateScores(scores) {
  * 신현호
  */
 
+function solution(survey, choices) {
+  // 초기값을 세팅합니다
+  const order = [
+    ["R", "T"],
+    ["C", "F"],
+    ["J", "M"],
+    ["A", "N"],
+  ];
+  // 성격 점수 체크를 위한 객체입니다
+  const score = { R: 0, T: 0, C: 0, F: 0, J: 0, M: 0, A: 0, N: 0};
+
+  survey.forEach((val, idx) => {
+    // 비구조화 할당을 통해 값을 받아옵니다
+    const [t1, t2] = val.split("");
+
+    // 모르겠음을 기준으로 값을 판단합니다 (모르겠음이 4)
+    if (choices[idx] < 4)
+      score[t1] += 4 - choices[idx];
+    if (choices[idx] > 4)
+      score[t2] += choices[idx] - 4;
+  });
+
+  // 비구조화 할당으로 첫번째 Value와 두번째 Value를 받아온다
+  return order.map(([v1, v2]) => {
+    // v2가 더 크면 v2를 리턴, v1이 더 크면 v1 리턴
+    if (score[v1] < score[v2])
+      return [v2];
+    return [v1];
+  }).join("");
+}
+
 /*
  * 이보리
  */
