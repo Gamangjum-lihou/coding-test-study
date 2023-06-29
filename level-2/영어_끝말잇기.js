@@ -12,6 +12,39 @@
  * 이보리
  */
 
+// 이전 단어 끝 문자와 현재 단어 첫 문자 비교
+const isMismatched = (prevWord, word) => {
+    return prevWord.at(-1) !== word.at(0);
+}
+
+// 단어 중복 여부
+const isDuplicate = (prevWords, word) => {
+    return prevWords.includes(word);
+}
+
+function solution(n, words) {
+    const answer = [0, 0]
+    
+    // continue/break를 사용하기 위해 for문 이용하여 순회
+    for (let i = 0; i < words.length; i++) {
+        // 첫 번째 단어는 pass
+        if (i === 0) continue;
+        
+        const word = words[i];
+        const prevWord = words[i - 1];
+        const prevWords = words.slice(0, i);
+
+        if (isMismatched(prevWord, word) || isDuplicate(prevWords, word)) {
+            const number = i % n + 1;
+            const round = Math.ceil((i + 1) / n); 
+            answer[0] = number;
+            answer[1] = round;
+            break;
+        }
+    }
+    return answer;
+}
+
 /*
  * 채희수
  */
