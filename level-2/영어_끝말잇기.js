@@ -4,6 +4,38 @@
  * 강철원
  */
 
+function solution(n, words) {
+  // i=1 부터 시작해서 첫 단어 넣어주고 시작
+  const usedWords = new Set([words[0]]);
+  let beforeLastLetter;
+
+  for (let i = 1; i < words.length; i++) {
+    beforeLastLetter = words[i - 1].at(-1);
+      // 1. 끝말잇기가 성립되지 않을 때 or 2. 이미 사용했던 단어를 또 사용했을 때 
+    if (isInvalidWord(beforeLastLetter, words[i], usedWords)) {
+      return [(i + 1) % n || n, Math.ceil((i + 1) / n)];
+    }
+    usedWords.add(words[i]);
+  }
+
+// 3. 탈락자가 발생하지 않았을 때
+  return [0, 0];
+}
+
+function isInvalidWord(beforeLastLetter, word, usedWords) {
+  return (
+    isWordChainInvalid(beforeLastLetter, word) || isWordAlreadyExists(usedWords, word)
+  );
+}
+
+function isWordChainInvalid(beforeLastLetter, word) {
+  return beforeLastLetter !== word[0];
+}
+
+function isWordAlreadyExists(usedWords, word) {
+  return usedWords.has(word);
+}
+
 /*
  * 신현호
  */
