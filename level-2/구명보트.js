@@ -105,6 +105,35 @@ function solution(people, limit) {
  * 신현호
  */
 
+function solution(people, limit) {
+  let res = 0;
+
+  // 무게순으로 정렬한다
+  people.sort((a, b) => (a - b));
+  while (people.length > 0) {
+    let value = people.pop();
+    let flag = false;
+
+    // value < limit이고 배열 길이가 남아있을떄까지
+    while (value < limit && people.length > 0) {
+      // 다 타지 않았고 value + 제일 무거운 값이 limit보다 작다면
+      if (flag && value + people[people.length - 1] <= limit) {
+        value += people.pop();
+        flag = false;
+        // 다 타지 않았고 value + 제일 가벼운 값이 limit보다 작다면
+      } else if (!flag && value + people[0] <= limit) {
+        value += people.shift();
+        flag = true;
+        // 다 탔음
+      } else
+        break;
+    }
+    res++;
+  }
+
+  return res;
+}
+
 /*
  * 이보리
  */

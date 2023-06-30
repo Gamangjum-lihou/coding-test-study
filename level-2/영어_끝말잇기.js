@@ -40,6 +40,36 @@ function isWordAlreadyExists(usedWords, word) {
  * 신현호
  */
 
+let flag = 0;
+let cnt = 1;
+const dict = [];
+
+function solution(n, words) {
+  dict.push(words[0]); // 미리 배열에 하나를 넣고 시작
+
+  for (let i = 1; i < words.length; i++) {
+    // dict 마지막 원소의 마지막 글자
+    const prev = dict[dict.length - 1][dict[dict.length - 1].length - 1];
+    // 현재 커서의 첫번째 글자
+    const curr = words[i][0];
+
+    // dict에 이미 존재하거나, prev - curr이 서로 다르거나
+    if (dict.includes(words[i]) || prev !== curr) {
+      flag = 1; // flag를 1로 변경하며 끝까지 탐색하지 않았음을 알림
+      break; // for문 탈출
+    }
+    dict.push(words[i]); // 정상적으로 한회차를 돌았다면 dict에 넣어준다
+    cnt += 1; // 한 회차를 돌았으니 cnt를 1 증가시켜준다
+  }
+
+  // 정상종료되었다면 틀린 사람이 없는거니 [0, 0] 반환
+  if (!flag)
+    return [0, 0];
+
+  // (1 + cnt % n) < 틀린사람, (1 + Math.floor(cnt / n)) < 몇번째 회차인지
+  return [1 + cnt % n, 1 + Math.floor(cnt / n)];
+}
+
 /*
  * 이보리
  */
