@@ -1,12 +1,22 @@
-# 프로그래머스 문제 풀이 스터디
-
-<img width="677" alt="image" src="https://user-images.githubusercontent.com/76567238/215252545-9c67b9dd-9429-4cd4-8797-3e04968856e2.png">
+# 📖 프로그래머스 문제 풀이 스터디
 
 ---
 
-# ✏️ **코딩테스트 기출 문제 풀이 및 업로드 Repository**
+# ✏️ 소개
+
+가맹점 1호의 코딩테스트 기출 문제 풀이 및 업로드 Repository입니다!
+
+## 🧑🏻‍💻 사용하는 사이트
+<div style="align-items: center; width: 100%">
+  <img width="677" alt="image" src="https://user-images.githubusercontent.com/76567238/215252545-9c67b9dd-9429-4cd4-8797-3e04968856e2.png">
+</div>
 
 - [프로그래머스](https://school.programmers.co.kr/learn/challenges?order=acceptance_desc&page=1)
+
+## 👩🏻‍💻 제출 방법
+
+- 최소 한 문제 이상의 코드는 주석이 전체 작성되어있어야 합니다.
+- 커밋 컨벤션은 다음과 같습니다. ex) feat: 신고 결과 받기 풀이
 
 <br>
 
@@ -202,12 +212,60 @@
     <td class="tg-c3ow"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-1/%EB%8D%A7%EC%B9%A0%ED%95%98%EA%B8%B0.js">풀이</a></td>
     <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
   </tr>
+  <tr>
+    <td class="tg-abip" rowspan="2">18주차<br>(5. 21 ~ 5. 27)</td>
+    <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/160586">대충 만든 자판</a></td>
+    <td class="tg-abip"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-1/%EB%8C%80%EC%B6%A9_%EB%A7%8C%EB%93%A0_%EC%9E%90%ED%8C%90.js">풀이</a></td>
+    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
+    <td class="tg-abip" rowspan="2"></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/161990" target="_blank" rel="noopener noreferrer">바탕화면 정리</a></td>
+    <td class="tg-c3ow"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-1/%EB%B0%94%ED%83%95%ED%99%94%EB%A9%B4_%EC%A0%95%EB%A6%AC.js">풀이</a></td>
+    <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
+  </tr>
+  <tr>
+    <td class="tg-abip" rowspan="2">19주차<br>(5. 28 ~ 6. 2)</td>
+    <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/150370">개인정보 수집 유효기간</a></td>
+    <td class="tg-abip"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-1/%EC%8B%A0%EA%B3%A0_%EA%B2%B0%EA%B3%BC_%EB%B0%9B%EA%B8%B0.js">풀이</a></td>
+    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
+    <td class="tg-abip" rowspan="2"></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/118666" target="_blank" rel="noopener noreferrer">성격 유형 검사하기</a></td>
+    <td class="tg-c3ow"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-1/%EC%84%B1%EA%B2%A9_%EC%9C%A0%ED%98%95_%EA%B2%80%EC%82%AC%ED%95%98%EA%B8%B0.js">풀이</a></td>
+    <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
+  </tr>
+  <tr>
+    <td class="tg-abip" rowspan="2">20주차<br>(6. 3 ~ 6. 10)</td>
+    <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/92334">신고 결과 받기</a></td>
+    <td class="tg-abip"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-1/%EC%8B%A0%EA%B3%A0_%EA%B2%B0%EA%B3%BC_%EB%B0%9B%EA%B8%B0.js">풀이</a></td>
+    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
+    <td class="tg-abip" rowspan="2"></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/172928" target="_blank" rel="noopener noreferrer">공원 산책</a></td>
+    <td class="tg-c3ow"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-1/%EA%B3%B5%EC%9B%90_%EC%82%B0%EC%B1%85.js">풀이</a></td>
+    <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
+  </tr>
+  <tr>
+    <td class="tg-abip" rowspan="2">21주차<br>(6. 16 ~ 6. 30)</td>
+    <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12981">영어 끝말잇기</a></td>
+    <td class="tg-abip"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%EC%98%81%EC%96%B4_%EB%81%9D%EB%A7%90%EC%9E%87%EA%B8%B0.js">풀이</a></td>
+    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">🏃‍♂️</span></td>
+    <td class="tg-abip" rowspan="2"></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/42885" target="_blank" rel="noopener noreferrer">구명보트</a></td>
+    <td class="tg-c3ow"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%EA%B5%AC%EB%AA%85%EB%B3%B4%ED%8A%B8.js">풀이</a></td>
+    <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">🏃‍♂️</span></td>
+  </tr>
 </tbody>
 </table>
 
 ---
 
-## algorithm
+## ⚙️ 알고리즘 목록
 
 |      algorithm      |         Name         |
 | :-----------------: | :------------------: |
@@ -225,6 +283,11 @@
 
 ---
 
-## figma
+## 🧑🏻‍🏫 피그마
 
-[피그마 링크](https://www.figma.com/file/2HtqkiQWiDqukyqdtmFft1/Untitled?t=25eXnnOtM082Xwhs-0)
+<div style="align-items: center; width: 100%">
+  <img src="https://blog.codestates.com/wp-content/uploads/2023/04/%EC%BD%94%EB%93%9C%EC%8A%A4%ED%85%8C%EC%9D%B4%EC%B8%A0_UXUI%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84_%ED%94%BC%EA%B7%B8%EB%A7%88%EC%82%AC%EC%9A%A9%EB%B2%95_%ED%94%BC%EA%B7%B8%EB%A7%88%EB%A1%9C%EA%B3%A0.png?fit=1906%2C1081&ssl=1" alt="">
+</div>
+
+- 코드에 대한 해설들은 피그마에 업로드됩니다.
+- [피그마 링크](https://www.figma.com/file/2HtqkiQWiDqukyqdtmFft1/Untitled?t=25eXnnOtM082Xwhs-0)
