@@ -4,6 +4,23 @@
  * 강철원
  */
 
+function solution(s) {
+    // 1. 객체 -> 배열로 변경
+    const arrayConverted = s.replace(/\{|\}/g,"").split(",")
+    
+    // 2. reduce를 활용해서 각 숫자의 중복횟수를 체크
+    const objectCheckedDuplication = arrayConverted.reduce((acc,cur) =>{
+        acc[cur] = (acc[cur]|| 0) + 1
+        return acc
+    },{})
+    
+    // 3. 중복횟수를 기준으로 내림차순으로 정렬
+    const sortedArrayByDuplicateCount = Object.entries(objectCheckedDuplication).sort(([,a], [,b]) => b - a)
+    
+    // 4. [[원소, 중복된 횟수]]   원소만 return
+    return sortedArrayByDuplicateCount.map((x) => +x[0])
+}
+
 /*
  * 이보리
  */
