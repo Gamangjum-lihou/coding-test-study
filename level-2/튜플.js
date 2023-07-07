@@ -8,6 +8,24 @@
  * 이보리
  */
 
+function solution(s) {
+    // 중괄호 제거 후 콤마를 기준으로 배열 생성
+    const convertToArray = s.replace(/[{}]/g,'').split(',');
+    // 빈 객체 생성 후 각 숫자의 갯수 저장
+    const numberObject = {};
+    
+    convertToArray.forEach((number) => {
+        numberObject[number] = numberObject[number] + 1 || 1;
+    })
+    
+    // numberObject를 갯수가 많은 순으로 정렬 후 키를 숫자로 변환
+    const answer = Object.entries(numberObject)
+        .sort(([, a], [, b]) => b - a)
+        .map(([key,]) => parseInt(key));
+
+    return answer;
+}
+
 /*
  * 신현호
  */
