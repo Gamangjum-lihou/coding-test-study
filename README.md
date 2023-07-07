@@ -252,12 +252,24 @@
     <td class="tg-abip" rowspan="2">21주차<br>(6. 16 ~ 6. 30)</td>
     <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12981">영어 끝말잇기</a></td>
     <td class="tg-abip"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%EC%98%81%EC%96%B4_%EB%81%9D%EB%A7%90%EC%9E%87%EA%B8%B0.js">풀이</a></td>
-    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">🏃‍♂️</span></td>
+    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅️</span></td>
     <td class="tg-abip" rowspan="2"></td>
   </tr>
   <tr>
     <td class="tg-c3ow"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/42885" target="_blank" rel="noopener noreferrer">구명보트</a></td>
     <td class="tg-c3ow"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%EA%B5%AC%EB%AA%85%EB%B3%B4%ED%8A%B8.js">풀이</a></td>
+    <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
+  </tr>
+  <tr>
+    <td class="tg-abip" rowspan="2">21주차<br>(7. 1 ~ 7. 8)</td>
+    <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/64065">튜플</a></td>
+    <td class="tg-abip"><a href="">풀이</a></td>
+    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">🏃‍♂️</span></td>
+    <td class="tg-abip" rowspan="2"></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12980" target="_blank" rel="noopener noreferrer">점프와 순간이동</a></td>
+    <td class="tg-c3ow"><a href="">풀이</a></td>
     <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">🏃‍♂️</span></td>
   </tr>
 </tbody>
