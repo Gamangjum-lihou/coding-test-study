@@ -200,3 +200,24 @@ function solution(cacheSize, cities) {
 /*
  * 채희수
  */
+
+function solution(cacheSize, cities) {
+  let answer = 0;
+  let cache = [];
+
+  cities.forEach(CITY => {
+    const city = CITY.toLowerCase()
+    if (!cache.includes(city)) {
+      cache = [city, ...cache].slice(0, cacheSize);
+      answer += 5;
+    } else {
+      const index = cache.indexOf(city);
+      const value = cache[index];
+      cache.splice(index, 1);
+      cache.unshift(value);
+      answer += 1;
+    }
+  });
+
+  return answer;
+}
