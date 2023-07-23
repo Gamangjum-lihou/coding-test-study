@@ -4,6 +4,38 @@
  * 강철원
  */
 
+function solution(cacheSize, cities) {
+    if(cacheSize === 0) return cities.length * 5
+    let totalTime = 0
+    const cache = []
+    
+    cities.forEach((cityName) => {
+        const lowerCaseCityName = cityName.toLowerCase()
+        if(cache.includes(lowerCaseCityName)) {
+            moveToFrontOfCache(cache, lowerCaseCityName)
+            totalTime += 1
+            return
+        }
+      // 캐쉬 맨 앞쪽에다 cityName 저장
+        updateCache(cache, lowerCaseCityName, cacheSize)
+        totalTime += 5
+    })
+    return totalTime
+}
+
+function moveToFrontOfCache(cache, cityName) {
+    const indexOfCity = cache.indexOf(cityName)
+    cache.splice(indexOfCity, 1)
+    cache.unshift(cityName)
+}
+
+function updateCache(cache, cityName, cacheSize) {
+    if(cache.length >= cacheSize){
+        cache.pop()
+    }
+    cache.unshift(cityName)
+}
+
 /*
  * 이보리
  */
