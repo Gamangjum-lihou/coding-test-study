@@ -205,17 +205,17 @@ function solution(cacheSize, cities) {
   let answer = 0;
   let cache = [];
 
-  cities.forEach(CITY => {
-    const city = CITY.toLowerCase()
-    if (!cache.includes(city)) {
-      cache = [city, ...cache].slice(0, cacheSize);
-      answer += 5;
-    } else {
+  cities.forEach(City => {
+    const city = City.toLowerCase();
+    if (cache.includes(city)) {
       const index = cache.indexOf(city);
       const value = cache[index];
       cache.splice(index, 1);
       cache.unshift(value);
       answer += 1;
+    } else {
+      cache = [city, ...cache].slice(0, cacheSize);
+      answer += 5;
     }
   });
 
