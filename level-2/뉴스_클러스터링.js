@@ -8,6 +8,86 @@
  * 이보리
  */
 
+// 유효성 검사
+const isValidateLetter = (string) => {
+    const regExp = /[a-z]{2}/g;
+    return regExp.test(string);
+}
+
+// 두 글자 원소로 이루어진 다중집합
+const multiset = (string) => {
+    // 소문자로 변환
+    const lowerCaseString = string.toLowerCase();
+    const multisetArray = [];
+    
+    // 두 글자씩 다중집합 배열에 넣어줌
+    for (let i = 0; i < string.length - 1; i++) {
+        multisetArray.push(lowerCaseString[i] + lowerCaseString[i + 1]);
+    }
+    
+    // 영문자로 된 글자 쌍만 남기고 제거한 값을 반환
+    return multisetArray.filter(value => isValidateLetter(value));
+}
+
+// 교집합 배열의 길이
+const intersectLength = (arr1, arr2) => {
+    const intersect = [];
+    // temp에 arr2를 복사하여 저장
+    // arr2를 복사하지 않고 바로 사용할 경우, splice 메서드로 인해 원본 배열이 변경되어 원치 않은 값 출력
+    const temp = [...arr2];
+    
+    arr1.forEach(value => {
+        const valueIndex = temp.indexOf(value);
+        
+        // temp에 value가 포함되었다면
+        if (valueIndex !== -1) {
+            // 교집합 배열에 넣어줌
+            intersect.push(temp[valueIndex]);
+            // temp에서 해당 값을 제거
+            temp.splice(valueIndex, 1);
+        }
+    })
+    
+    return intersect.length;
+}
+
+// 합집합 배열의 길이
+const unionLength = (arr1, arr2) => {
+    const temp = [...arr2];
+    
+    arr1.forEach(value => {
+        const valueIndex = temp.indexOf(value);
+        
+        // temp에 value가 포함되었다면
+        if (value === temp[valueIndex]) {
+            // temp에서 해당 값을 제거
+            temp.splice(valueIndex, 1);
+        }
+    });
+    
+    // arr1와 중복된 값이 제거된 temp와 arr1의 합집합 배열
+    const union = [...arr1, ...temp];
+    
+    return union.length;
+}
+
+function solution(str1, str2) {
+    const jaccardNumber = 65536;
+    
+    const str1Multiset = multiset(str1);
+    const str2Multiset = multiset(str2);
+
+    const union = unionLength(str1Multiset, str2Multiset);
+    const intersect = intersectLength(str1Multiset, str2Multiset);
+    
+    const jaccardSimilarity = intersect / union;
+
+    // 공집합 여부 확인
+    const isEmptySet = isNaN(jaccardSimilarity);
+    
+    return isEmptySet ? jaccardNumber : Math.floor(jaccardSimilarity * jaccardNumber);
+}
+
 /*
  * 신현호
  */
