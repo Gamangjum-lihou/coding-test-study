@@ -8,6 +8,20 @@
  * 이보리
  */
 
+const convertNumberNotaion = (notation, number) => {
+    return parseInt(number).toString(notation).toUpperCase();
+}
+
+function solution(n, t, m, p) {
+    let stringNumber = '';
+    
+    for (let i = 0; stringNumber.length <= t * m; i++) {
+        stringNumber += convertNumberNotaion(n, i);
+    }
+    
+    return [...stringNumber].filter((_, index) => index % m === p - 1).join('').slice(0, t);
+}
+
 /*
  * 신현호
  */
