@@ -75,3 +75,25 @@ function solution(s) {
 /*
  * 채희수
  */
+
+function solution(n, t, m, p) {
+  // 말해야 할 숫자를 해당 진수 n으로 바꾼다. 미리 구할 숫자의 갯수 t * 참가 인원 m까지
+  const GAME_ANSWER = convertNum(n, t * m);
+
+  // 말해야 하는 답안구하기
+  let answer = '';
+  for (let i = 0; i < t; i++) {
+    answer += GAME_ANSWER[i * m + p - 1];
+  }
+
+  return answer;
+}
+
+function convertNum(n, limit) {
+  let convertedNum = '';
+  for (let i = 0; i <= limit; i += 1) {
+    convertedNum += i.toString(n);
+  }
+
+  return convertedNum.toUpperCase();
+}
