@@ -4,6 +4,89 @@
  * 강철원
  */
 
+function solution(str1, str2) {
+    const CONDITIONAL_NUMBER = 65536
+    const [multisetA, multisetB] = getMultiset(str1, str2)
+    
+    // input 모두가 공집합일 때
+    if(!multisetA.length && !multisetB.length){
+        return CONDITIONAL_NUMBER
+    }
+    
+    const countOfIntersection = calculateIntersection(countDuplication(multisetA, multisetB))
+    const countOfunion = calculateUnion(countDuplication(multisetA, multisetB))
+    const jaccardSimilarity = countOfIntersection / countOfunion
+    
+    return Math.floor(jaccardSimilarity * CONDITIONAL_NUMBER)
+}
+
+
+function getMultiset(str1, str2) {
+    const multisetA = makeChangeLowercase(pickOnlyString(makeMultiset(str1)))
+    const multisetB = makeChangeLowercase(pickOnlyString(makeMultiset(str2)))
+    return [multisetA, multisetB]
+}
+
+function makeMultiset(str) {
+     return [...str].reduce((acc, character, index) => {
+        if(index === str.length - 1){
+            return acc
+        }
+        const pairOfCharacter = character + str[index + 1]
+        acc.push(pairOfCharacter)
+        return acc
+    },[])
+}
+
+function pickOnlyString(multisetArr) {
+    return multisetArr.filter((pairOfCharacter) => {
+        const pairOfCharacterWithOnlyString = pairOfCharacter.match(/[a-zA-Z]/g)
+        if(pairOfCharacterWithOnlyString?.length === 2){
+            return pairOfCharacter
+        }
+    })
+}
+
+function makeChangeLowercase(multisetArr) {
+    return multisetArr.map((pairOfCharacter) => pairOfCharacter?.toLowerCase())
+}
+
+function countDuplication(multisetA, multisetB) {
+    const countOfMultisetA = new Map()
+    const countOfMultisetB = new Map()
+    
+    multisetA.forEach(pairOfCharacter => {
+        countOfMultisetA.set(pairOfCharacter, (countOfMultisetA.get(pairOfCharacter) | 0) + 1)
+    })
+    multisetB.forEach(pairOfCharacter => {
+        countOfMultisetB.set(pairOfCharacter, (countOfMultisetB.get(pairOfCharacter) | 0) + 1)
+    })
+    
+    return [countOfMultisetA, countOfMultisetB]
+}
+
+function calculateIntersection([countOfMultisetA, countOfMultisetB]) {
+    let countOfIntersection = 0;
+    countOfMultisetA.forEach((count, pairOfCharacter) => {
+        if(countOfMultisetB.has(pairOfCharacter)) {
+            countOfIntersection += Math.min(count, countOfMultisetB.get(pairOfCharacter))
+        }
+    })
+    return countOfIntersection;
+}
+
+
+function calculateUnion([countOfMultisetA, countOfMultisetB]) {
+    const union = countOfMultisetA
+    countOfMultisetB.forEach((value, key) => {
+            union.set(key, Math.max(value, union.get(key) ?? 0))
+    })
+    
+    let count = 0
+    union.forEach((value,key) => count += value)
+    return count
+}
+
 /*
  * 이보리
  */
