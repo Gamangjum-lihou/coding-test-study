@@ -83,6 +83,48 @@ function solution(fees, records) {
  * 신현호
  */
 
+function solution(fees, records) {
+    let carList = {};
+    const feeList = [];
+
+    records.forEach((record) => {
+        // 비구조화 할당으로 값 파싱
+        let [time, number, type] = record.split(" ");
+        const [hour, minute] = time.split(":").map(Number);
+
+        // 시간 계산
+        time = hour * 60 + minute;
+        // list에 없다면 0으로 초기화
+        if (!carList[number]) {
+            carList[number] = 0;
+        }
+        // IN이라면 1439(23:59 분 변환한 수치) 에서 time 뺀것만큼 더해줌
+        if (type === 'IN') {
+            carList[number] += (1439 - time);
+        }
+        // OUT이라면 1439 에서 time 뺀것만큼 빼줌
+        if (type === 'OUT') {
+            carList[number] -= (1439 - time);
+        }
+    });
+
+    // Object.entries를 통해 carList를 [key, value]형태의 배열로 나타낸 후 정렬
+    carList = Object.entries(carList).sort((a, b) => (a[0] - b[0]));
+    // 주차 요금 계산
+    carList.forEach((car) => {
+        let fee = 0;
+        if (fees[0] > car[1]) {
+            fee = fees[1];
+        } else {
+            fee = fees[1] + Math.ceil((car[1] - fees[0]) / fees[2]) * fees[3];
+        }
+        feeList.push(fee);
+    });
+
+    return feeList;
+}
+
+
 
 /*
  * 채희수

@@ -81,6 +81,34 @@ function solution(want, number, discount) {
  * 신현호
  */
 
+function solution(want, number, discount) {
+  let day = 0;
+
+  for (let i = 0; i < discount.length; i++) {
+    // number배열의 사본을 만들어서 카운팅
+    const copy_number = [...number];
+    let cnt = 0;
+
+    for (let j = i; j < discount.length; j++) {
+      const itemIdx = want.indexOf(discount[j]);
+
+      // want배열에 존재하고, 더 구매해도 되는 상황인지 체크
+      if (itemIdx !== -1 && copy_number[itemIdx] > 0) {
+        copy_number[itemIdx] -= 1;
+        cnt += 1;
+      } else {
+        break;
+      }
+    }
+
+    // 10개 이상이면 회원가입함
+    if (cnt >= 10) {
+      day += 1;
+    }
+  }
+  return day;
+}
+
 /*
  * 채희수
  */
