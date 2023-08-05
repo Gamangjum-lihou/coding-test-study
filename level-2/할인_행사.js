@@ -4,6 +4,44 @@
  * 강철원
  */
 
+function solution(want, number, discount) {
+  const DAYS = 10;
+  const discountDays = discount.length;
+  let totalDays = 0;
+
+  // 1. wantData 만들기  {원하는 제품 : 원하는 수량}
+  const wantData = want.reduce((acc, cur, index) => {
+      acc[cur] = number[index];
+      return acc;
+    },
+    { totalQuantity: 10 }
+  );
+
+  // 2. for문을 사용해서 discount 순회
+  for (let i = 0; i <= discountDays - DAYS; i++) {
+      // for문 시작될때마다 data 초기화
+    let copyWantData = { ...wantData };
+
+    for (let j = i; j < i + DAYS; j++) {
+      const todayItemOnSale = discount[j];
+        // 오늘 할인 하는 품목이 정현이가 원하는 품목에 없거나 원하는 수량을 초과할 경우
+      if (!copyWantData[todayItemOnSale]) {
+        break;
+      }
+
+      copyWantData[todayItemOnSale] -= 1;
+      copyWantData.totalQuantity -= 1;
+    }
+
+    // 원하는 품목의 수량을 모두 충족하였을 경우  
+    if (!copyWantData.totalQuantity) {
+      totalDays += 1;
+    }
+  }
+    
+  return totalDays;
+}
+
 /*
  * 이보리
  */
