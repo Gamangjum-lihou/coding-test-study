@@ -264,11 +264,32 @@
     <td class="tg-abip" rowspan="2">21주차<br>(7. 1 ~ 7. 8)</td>
     <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/64065">튜플</a></td>
     <td class="tg-abip"><a href="">풀이</a></td>
-    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">🏃‍♂️</span></td>
+    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
     <td class="tg-abip" rowspan="2"></td>
   </tr>
   <tr>
     <td class="tg-c3ow"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12980" target="_blank" rel="noopener noreferrer">점프와 순간이동</a></td>
+    <td class="tg-c3ow"><a href="">풀이</a></td>
+    <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
+  </tr>
+  <tr>
+    <td class="tg-abip" rowspan="2">22주차<br>(7. 23 ~ 7. 29)</td>
+    <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/17680">캐시</a></td>
+    <td class="tg-abip"><a href="">풀이</a></td>
+    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
+    <td class="tg-abip" rowspan="2"></td>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+    <td class="tg-abip" rowspan="2">23주차<br>(7. 30 ~ 8. 5)</td>
+    <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/131127">할인행사</a></td>
+    <td class="tg-abip"><a href="">풀이</a></td>
+    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">🏃‍♂️</span></td>
+    <td class="tg-abip" rowspan="2"></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/92341" target="_blank" rel="noopener noreferrer">주차 요금 계산</a></td>
     <td class="tg-c3ow"><a href="">풀이</a></td>
     <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">🏃‍♂️</span></td>
   </tr>
