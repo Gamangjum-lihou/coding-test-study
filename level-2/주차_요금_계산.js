@@ -197,3 +197,46 @@ function solution(fees, records) {
 /*
  * 채희수
  */
+
+const IN = 'IN';
+const OUT = 'OUT';
+const OUT_TIME = convertToMin('23:59');
+
+function convertToMin(time) {
+  const [h, m] = time.split(':');
+  return +h * 60 + +m;
+}
+
+function calculateFee([primaryTime, primaryFee, unitTime, unitFee], totalTime) {
+  if (totalTime > primaryTime) {
+    return primaryFee + Math.ceil((totalTime - primaryTime) / unitTime) * unitFee;
+  }
+  return primaryFee;
+}
+
+function solution(fees, records) {
+  const carRecords = new Map();
+
+  records.forEach(record => {
+    const [time, carNumber, state] = record.split(' ');
+    const minute = convertToMin(time);
+
+    if (!carRecords.has(carNumber)) {
+      carRecords.set(carNumber, { totalTime: 0, lastTime: 0 });
+    }
+
+    const currentRecord = carRecords.get(carNumber);
+
+    if (state === IN) {
+      currentRecord.lastTime = minute;
+    } else if (state === OUT) {
+      currentRecord.totalTime += (minute - currentRecord.lastTime);
+    }
+  });
+
+  const answer = Array.from(carRecords.keys())
+    .sort((a, b) => parseInt(a) - parseInt(b))
+    .map(carNumber => calculateFee(fees, carRecords.get(carNumber).totalTime + OUT_TIME));
+
+  return answer;
+}
