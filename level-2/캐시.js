@@ -40,6 +40,50 @@ function updateCache(cache, cityName, cacheSize) {
  * 이보리
  */
 
+const isCacheMiss = (city, citiesQueue) => {
+    return !citiesQueue.includes(city);
+}
+     
+function solution(cacheSize, cities) {
+    const cacheHit = 1;
+    const cacheMiss = 5;
+    
+    let runtime = 0;
+    let citiesQueue = [];
+    
+    // cacheSize가 0인 경우 early return
+    if(cacheSize === 0) return cities.length * cacheMiss;
+    
+    // cities 순회
+    cities.forEach((city) => {
+        // 도시 이름을 영어 소문자로 변환
+        const cityName = city.toLowerCase();
+
+        // 도시 이름이 citiesQueue에 없는 경우
+        if(isCacheMiss(cityName, citiesQueue)) {
+            // citiesQueue의 길이가 cacheSize와 같거나 큰 경우
+            if(citiesQueue.length >= cacheSize) {
+                // 가장 오랜시간 참조되지 않은 페이지 제거
+                // citiesQueue의 길이가 cacheSize보다 작은 경우 페이지 제거가 필요하지 않음
+                citiesQueue.shift();
+            }
+            citiesQueue.push(cityName);
+            runtime += cacheMiss;
+            return;
+        }
+        
+        // 도시 이름이 citiesQueue에 있는 경우
+        // citiesQueue 내의 해당 도시 이름의 인덱스를 이용
+        const index = citiesQueue.indexOf(cityName);
+        // 가장 최근에 참조한 페이지이므로 citiesQueue 내 기존의 위치에서 가장 최근 위치로 이동
+        citiesQueue.splice(index, 1);
+        citiesQueue.push(cityName);
+        runtime += cacheHit;
+    })
+    
+    return runtime;
+}
+
 /*
  * 신현호
  */
