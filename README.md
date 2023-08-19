@@ -261,36 +261,48 @@
     <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
   </tr>
   <tr>
-    <td class="tg-abip" rowspan="2">21주차<br>(7. 1 ~ 7. 8)</td>
+    <td class="tg-abip" rowspan="2">22주차<br>(7. 1 ~ 7. 8)</td>
     <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/64065">튜플</a></td>
-    <td class="tg-abip"><a href="">풀이</a></td>
+    <td class="tg-abip"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%ED%8A%9C%ED%94%8C.js">풀이</a></td>
     <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
     <td class="tg-abip" rowspan="2"></td>
   </tr>
   <tr>
     <td class="tg-c3ow"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12980" target="_blank" rel="noopener noreferrer">점프와 순간이동</a></td>
-    <td class="tg-c3ow"><a href="">풀이</a></td>
+    <td class="tg-c3ow"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%EC%A0%90%ED%94%84%EC%99%80_%EC%88%9C%EA%B0%84%EC%9D%B4%EB%8F%99.js">풀이</a></td>
     <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
   </tr>
   <tr>
-    <td class="tg-abip" rowspan="2">22주차<br>(7. 23 ~ 7. 29)</td>
+    <td class="tg-abip" rowspan="2">23주차<br>(7. 23 ~ 7. 29)</td>
     <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/17680">캐시</a></td>
-    <td class="tg-abip"><a href="">풀이</a></td>
+    <td class="tg-abip"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%EC%BA%90%EC%8B%9C.js">풀이</a></td>
     <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
     <td class="tg-abip" rowspan="2"></td>
   </tr>
   <tr>
   </tr>
   <tr>
-    <td class="tg-abip" rowspan="2">23주차<br>(7. 30 ~ 8. 5)</td>
+    <td class="tg-abip" rowspan="2">24주차<br>(7. 30 ~ 8. 5)</td>
     <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/131127">할인행사</a></td>
-    <td class="tg-abip"><a href="">풀이</a></td>
-    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">🏃‍♂️</span></td>
+    <td class="tg-abip"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%ED%95%A0%EC%9D%B8_%ED%96%89%EC%82%AC.js">풀이</a></td>
+    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅️</span></td>
     <td class="tg-abip" rowspan="2"></td>
   </tr>
   <tr>
     <td class="tg-c3ow"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/92341" target="_blank" rel="noopener noreferrer">주차 요금 계산</a></td>
-    <td class="tg-c3ow"><a href="">풀이</a></td>
+    <td class="tg-c3ow"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%EC%A3%BC%EC%B0%A8_%EC%9A%94%EA%B8%88_%EA%B3%84%EC%82%B0.js">풀이</a></td>
+    <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
+  </tr>
+  <tr>
+    <td class="tg-abip" rowspan="2">25주차<br>(8. 13 ~ 8. 19)</td>
+    <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/42888">오픈채팅방</a></td>
+    <td class="tg-abip"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%EC%98%A4%ED%94%88%EC%B1%84%ED%8C%85%EB%B0%A9.js">풀이</a></td>
+    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">🏃‍♂️</span></td>
+    <td class="tg-abip" rowspan="2"></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12913" target="_blank" rel="noopener noreferrer">땅따먹기</a></td>
+    <td class="tg-c3ow"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%EB%95%85%EB%94%B0%EB%A8%B9%EA%B8%B0.js">풀이</a></td>
     <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">🏃‍♂️</span></td>
   </tr>
 </tbody>
