@@ -4,6 +4,36 @@
  * 강철원
  */
 
+function solution(records) {
+  const nicknameData = {};
+  const STATE = {
+    enter: 'Enter',
+    leave: 'Leave',
+    change: 'Change',
+  };
+  const STATE_MESSAGE = {
+    Enter: '들어왔습니다.',
+    Leave: '나갔습니다.',
+  };
+  const getStateMessage = (nickname, state) => `${nickname}님이 ${state}`;
+
+  // userHistory = [[userId, state] ...]  =  [[uid1234, Enter], [jid1434, Leave] ...]  
+  const usersHistory = records.reduce((acc, record) => {
+    const [state, userId, nickname] = record.split(' ');
+    if (state !== STATE.leave) {
+      nicknameData[userId] = nickname;
+    }
+
+    if (state !== STATE.change) {
+      acc.push([userId, state]);
+    }
+    return acc;
+  }, []);
+
+  // ["Prodo님이 들어왔습니다.", "Ryan님이 들어왔습니다.", "Prodo님이 나갔습니다.", "Prodo님이 들어왔습니다."]  
+  return usersHistory.map(([userId, state]) => getStateMessage(nicknameData[userId], STATE_MESSAGE[state]));
+}
+
 /*
  * 이보리
  */
