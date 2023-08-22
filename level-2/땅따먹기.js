@@ -53,3 +53,20 @@ function solution(land) {
 /*
  * 채희수
  */
+
+function solution(land) {
+    const row = land.length;
+    const dp = land;
+
+    // 2번째 행부터 값을 계산
+    for(let i=1; i<row; i++) {
+        for(const j in land[i]){
+            // 전 행에서 같은 인덱스 값을 제외하고 그 중에 제일 큰 값을 더해준다.
+            const optionNumbers = land[i-1].filter((el, idx) => idx != j)
+            dp[i][j] += Math.max(...optionNumbers)
+        }
+    }
+    
+    // 마지막 행에서 가장 큰 값을 반환
+    return Math.max(...dp[row -1]);
+}
