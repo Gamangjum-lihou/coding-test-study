@@ -80,6 +80,69 @@ function solution(m, n, board) {
  * 신현호
  */
 
+const ERASED = 0;
+
+function solution(m, n, board) {
+    board = board.map((row) => Array.from(row));
+
+    while (true) {
+        const find = [];
+
+        for (let y = 0; y < m - 1; y++) {
+            for (let x = 0; x < n - 1; x++) {
+                if (isValid(y, x, board)) {
+                    find.push([y, x]);
+                }
+            }
+        }
+
+        if (!find.length) {
+            // flat으로 이차원배열 단순화
+            return board.flat().filter((val) => !val).length;
+        }
+
+        // find 값들을 조회하여 값을 지워줌 (find에 시작 값들을 저장했으므로)
+        find.forEach(([y, x]) => {
+            changeValues(y, x, board);
+        });
+
+        for (let y = m - 1; y >= 0; y--) {
+            for (let x = 0; x < n; x++) {
+                for (let i = y - 1; i >= 0; i--) {
+                    // 현재 y, x가 사라진 공간이 아니면 pass
+                    if (board[y][x]) {
+                        break;
+                    }
+
+                    // board[y][x]가 사라진공간이고 board[i][x]에 값이 있다면
+                    if (board[i][x]) {
+                        board[y][x] = board[i][x];
+                        board[i][x] = ERASED;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+}
+
+function isValid(y, x, board) {
+    const currVal = board[y][x];
+    return (
+      currVal &&
+      currVal === board[y][x + 1] &&
+      currVal === board[y + 1][x] &&
+      currVal === board[y + 1][x + 1]
+    );
+}
+
+function changeValues(y, x, board) {
+    board[y][x] = ERASED;
+    board[y][x + 1] = ERASED;
+    board[y + 1][x] = ERASED;
+    board[y + 1][x + 1] = ERASED;
+}
+
 /*
  * 채희수
  */
