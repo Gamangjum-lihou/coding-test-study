@@ -58,6 +58,47 @@ function getPartnerNumbers(duplicateNumbers) {
  * 이보리
  */
 
+const MATCH = {
+    no_match: "-1",
+    only_zero: "0",
+}
+
+function solution(X, Y) {
+    const xMap = new Map();
+    const yMap = new Map();
+    let matches = '';
+    
+    // X를 순회하며 xMap 생성
+    for (let i = 0; i < X.length; i++) {
+        const key = X[i];
+        xMap.set(key, xMap.get(key) + 1 || 1);
+    }
+    
+    // Y를 순회하며 yMap 생성
+    for (let i = 0; i < Y.length; i++) {
+        const key = Y[i];
+        yMap.set(key, yMap.get(key) + 1 || 1);
+    }
+    
+    // 9부터 내림차순으로 순회하면서 짝궁 생성
+    for (let i = 9; i > -1; i--) {
+        const match = String(i); // 공통으로 나타나는 정수를 문자열로 변환
+        const countX = xMap.get(match); // xMap 내 match의 갯수
+        const countY = yMap.get(match); // yMap 내 match의 갯수
+        const countMatch = Math.min(countX, countY); // 각 Map의 값 중 최솟값이 공통으로 나타나는 정수의 갯수
+
+        matches += match.repeat(countMatch); // countMatch큼 반복한 match를 짝궁 문자열에 추가
+    }
+    
+    const noMath = matches.length === 0; // 짝궁의 길이가 0인 경우
+    const onlyZero = Number(matches) === 0; // 짝궁이 0으로만 구성된 경우
+    
+    if (noMath) return MATCH.no_match;
+    if (onlyZero) return MATCH.only_zero;
+    
+    return matches;
+}
+
 /*
  * 신현호
  */
