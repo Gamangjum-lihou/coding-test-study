@@ -137,6 +137,67 @@ function solution(orders, course) {
  * 신현호
  */
 
+const LEAST_COURSE_SIZE = 2;
+
+function solution(orders, course) {
+  const answer = [];
+    
+  course.forEach((num) => {
+    const result = {};
+    let max = 0;
+
+    orders.forEach((order) => {
+      // order의 요소들 중, num의 값만큼의 조합을 만든다.
+      const combinations = getCombinations([...order], num);
+        
+      combinations.forEach((combination) => {
+        const menu = combination.sort().join("");
+          
+        // 해당 메뉴가 있으면
+        if (result[menu]) {
+          result[menu] += 1;
+          if (max < result[menu]) {
+            max = result[menu];
+          }
+        } else {
+          result[menu] = 1;
+        }
+      });
+    });
+
+    // 코스요리 메뉴는 최소 2가지 이상의 단품메뉴로 구성되어야 하므로
+    if (max >= LEAST_COURSE_SIZE)
+      for (const [key, value] of Object.entries(result)) {
+        // object.entries로 value를 조회하여 value === max인 요소들을 answer에 넣는다
+        if (value === max) {
+            answer.push(key);
+        }
+      }
+  });
+  return answer.sort();
+}
+
+// 조합을 만들어내는 부분
+function getCombinations(arr, selectNumber) {
+  const results = [];
+
+  if (selectNumber === 1) {
+    return arr.map((value) => [value]);
+  }
+
+  arr.forEach((select, index, origin) => {
+    const rest = origin.slice(index + 1);
+    // 재귀를 사용하여 조합을 구함
+    const combinations = getCombinations(rest, selectNumber - 1);
+    const attached = combinations.map((combination) => [select, ...combination]);
+
+    results.push(...attached);
+  });
+
+  return results;
+};
+
+
 /*
  * 채희수
  */
