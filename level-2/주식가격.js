@@ -30,3 +30,26 @@ function solution(prices) {
 /*
  * 신현호
  */
+
+function solution(prices) {
+    const answer = new Array(prices.length).fill(0);
+    
+    for(let i = 0; i < prices.length - 1; i++) {
+        // 마지막 원소 이외의 원소에게 1초 부여
+        // 마지막 원소는 이후 진행되는게 없기때문
+        answer[i] = 1;
+        
+        if (prices[i] <= prices[i + 1]) {
+            for (let j = i + 1; j < prices.length - 1; j++) {
+                // i번째 원소의 가격이 다음 시간의 가격보다 작다면 break
+                if (prices[i] > prices[j]) {
+                    break;
+                } else {
+                    answer[i] += 1;
+                }
+            }
+        }
+    }
+    
+    return answer;
+}
