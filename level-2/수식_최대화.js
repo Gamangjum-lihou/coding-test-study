@@ -127,3 +127,62 @@ function solution(expression) {
 /*
  * 신현호
  */
+
+const OPERATORS = {
+    plus: '+',
+    minus: '-',
+    multiply: '*'
+};
+const LEN = 3;
+const regExp = /(\D)/;
+
+function solution(expression) {
+    const answer = [];
+    const permutations = getPermutations(OPERATORS, LEN); // 연산자 경우의 수 구하기
+    
+    //연산자 경우의 수 순회
+    permutations.forEach(permutation => {
+        // expression을 의미있는 단위로 구분
+        const numbers = expression.split(regExp);
+        // permutation을 순회
+        permutation.forEach(exp => {
+            // split된 numbers에 exp가 포함된다면 (연산자)
+            while (numbers.includes(exp)) {
+                // indexOf로 해당 index를 구하고
+                const idx = numbers.indexOf(exp);
+                // numbers를 splice를 통해 값을 변경시킨다.
+                numbers.splice(idx - 1, LEN, calculate(numbers[idx - 1], numbers[idx + 1], exp));
+            }
+        });
+        answer.push(Math.abs(numbers[0]));
+    });
+    
+    return Math.max(...answer);
+}
+
+function calculate(a, b, exp){
+    const val1 = Number(a);
+    const val2 = Number(b);
+    
+    return (exp === OPERATORS.multiply) ? 
+        val1 * val2 : (exp === OPERATORS.plus) ? val1 + val2 : val1 - val2;
+}
+
+// 연산자 순열을 구해하는 기능
+function getPermutations(arr, num) {
+    const results = [];
+    
+    // 재귀 종료조건
+    if (num === 1) {
+        return arr.map(v => [v]);
+    }
+    Object.values(OPERATORS).forEach((fixed, index, origin) => {
+        const rest = [...origin.slice(0, index), ...origin.slice(index + 1, origin.length)];
+        const permutations = getPermutations(rest, num - 1);
+        const attached = permutations.map(v => [fixed, ...v]);
+        
+        results.push(...attached);
+    });
+
+    return results;
+}
