@@ -101,6 +101,81 @@ function isCorrectParentheses(u) {
  * 이보리
  */
 
+const BRACKET = {
+    left: '(',
+    right: ')',
+}
+
+// 올바른 괄호 문자열 여부를 boolean 값으로 반환
+const isCorrectBracket = (string) => {
+    let balanceCount = 0;
+    
+    for (const char of string) {
+        if (char === BRACKET.left) {
+            balanceCount += 1;
+        } else {
+            balanceCount -= 1;
+        }
+        
+        // balanceCount가 음수일 경우 ')'가 더 많은 것이므로 false 반환
+        if(balanceCount < 0) return false;
+    }
+
+    // 반복문 내에서 balanceCount가 음수인 경우를 확인하기 때문에, 반복문을 통과한다면 true 반환
+    return true;
+}
+
+const getBraketIndex = (string) => {
+    // 균형잡힌 괄호 문자열인지 확인하기 위해 count 변수 사용
+    let count = 0;
+    
+    for (let index = 0; index < string.length; index++) {
+        // '('인 경우, count 1 증가  
+        if (string[index] === BRACKET.left) count += 1;
+        // ')'인 경우, count 1 감소
+        else count -= 1;
+        
+        // 균형잡힌 괄호 문자열일 경우 해당 인덱스를 반환
+        if (count === 0) return index;
+    }
+}
+
+// 괄호 방향을 뒤집은 결과를 반환
+const reversedBracket = (string) => {
+    let reversed = '';
+    
+    for (const char of string) {
+        if (char === BRACKET.left) reversed += BRACKET.right;
+        else reversed += BRACKET.left;
+    }
+    
+    return reversed;
+}
+
+const convertToCorrectBracket = (string) => {
+    // 입력이 빈 문자열인 경우, 빈 문자열을 반환합니다.
+    if (string === '') return '';
+    
+    const index = getBraketIndex(string);
+    const u = string.slice(0, index + 1);
+    const v = string.slice(index + 1);
+    
+    if (isCorrectBracket(u)) { // u가 올바른 괄호 문자열인 경우,
+        // 문자열 v는 올바른 괄호 문자열 변환 과정의 수행하고 그 결과를 문자열 u에 이어 붙여 반환
+        return u + convertToCorrectBracket(v);
+    } else { // u가 올바른 괄호 문자열이 아닌 경우,
+        // 문자열 u의 첫 번째, 마지막 문자 제거
+        const removedOutside = u.slice(1, u.length - 1);
+        
+        // 소괄호 내에 문자열 v는 올바른 괄호 문자열 변환 과정 결과를 넣고, 괄호 방향이 뒤집힌 removedOutside를 이어 붙여 반환
+        return BRACKET.left + convertToCorrectBracket(v) + BRACKET.right + reversedBracket(removedOutside);
+    }
+}
+
+function solution(p) {
+    return convertToCorrectBracket(p);
+}
+
 /*
  * 신현호
  */
