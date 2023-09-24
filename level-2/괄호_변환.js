@@ -104,3 +104,65 @@ function isCorrectParentheses(u) {
 /*
  * 신현호
  */
+
+const OPEN = '(';
+const CLOSE = ')';
+
+function solution(p) {
+    const status = {
+        open: 0,
+        close: 0,
+    };
+    let answer = '';
+
+    if (!p) {
+        return '';
+    }
+    for (let i = 0; i < p.length; i += 1) {
+        if (p[i] === OPEN) {
+            status.open += 1;
+        } else {
+            status.close += 1;
+        }
+        // 균형일 때 올바른 괄호인지 판단
+        if (status.open === status.close) {
+            // 0 ~ i + 1까지의 문자열이 올바른 괄호라면
+            if (check(p.slice(0, i + 1))) {
+                answer = p.slice(0, i + 1) + solution(p.slice(i + 1));
+                return answer;
+            } else {
+                // 올바른 괄호가 아니라면
+                // 4-1, 4-2, 4-3 수행
+                answer = OPEN + solution(p.slice(i + 1)) + CLOSE;
+                
+                // 4-4
+                for (let j = 1; j < i; j += 1) {
+                    if (p[j] === OPEN) {
+                        answer = answer + CLOSE;
+                    } else {
+                        answer = answer + OPEN;
+                    }
+                }
+                // 4-5
+                return answer;
+            }
+        }
+    }    
+}
+
+// 올바른 괄호인지 판단
+function check(p) {
+    const brakets = [];
+    
+    for (let i = 0; i < p.length; i++) {
+        if (p[i] === OPEN) {
+            brakets.push(OPEN);
+        } else {
+            if (brakets.length === 0) {
+                return false;
+            }
+            brakets.pop();
+        }
+    }
+    return true;
+}
