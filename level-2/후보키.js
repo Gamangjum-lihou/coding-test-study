@@ -4,6 +4,75 @@
  * 강철원
  */
 
+function solution(relation) {
+    let idxArr = Array.from(Array(relation[0].length), (_, i) => i);
+    let combinations = [];
+    
+    // 가능한 조합 생성
+    for(let i = 0 ; i < idxArr.length ; i++){
+        combinations.push(...getCombination(idxArr, i + 1));
+    }
+
+    // 유효성 확인
+    const uniqueness = checkUniqueness(relation, combinations);
+    
+    // 최소성 확인
+    const minimality = checkMinimality(uniqueness);
+    return minimality.length;
+}
+
+function getCombination(idxArr, num) {
+    const results = [];
+    if(num === 1) {
+        return idxArr.map(_ => [_]);
+    }
+
+    idxArr.forEach((fixed, index, origin) => {
+        const rest = origin.slice(index + 1);
+        const next = getCombination(rest, num - 1);
+        const combinated = next.map(combination => [fixed, ...combination]);
+        results.push(...combinated);
+    });
+
+    return results;
+}
+
+function checkUniqueness(relation, combinations) {
+    const results = [];
+    combinations.forEach((combination) => {
+        let set = new Set();
+        relation.forEach((column) => {
+            set.add(combination.map(index => column[index]).join(','));
+        });
+  
+        if(set.size === relation.length) {
+            results.push(combination);
+        }
+    });
+    return results
+}
+
+
+function checkMinimality(combinations) {
+    const results = [];
+ 
+
+    while(combinations.length > 0){
+        const firstCombination = combinations[0]
+        results.push(firstCombination);
+        combinations = combinations.reduce((acc, combination) => {
+            const isMinimality = firstCombination.every(e => !combination.includes(e));
+
+            if(isMinimality) {
+               acc.push(combination)
+            }
+            return acc;
+        },[]);
+    }
+
+    return results;
+}
+
 /*
  * 이보리
  */
