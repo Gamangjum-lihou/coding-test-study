@@ -321,13 +321,55 @@
     <td class="tg-abip" rowspan="2">27주차<br>(9. 3 ~ 9. 9)</td>
     <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/17679">메뉴 리뉴얼</a></td>
     <td class="tg-abip"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%EB%A9%94%EB%89%B4_%EB%A6%AC%EB%89%B4%EC%96%BC.js">풀이</a></td>
-    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">🏃‍♂️</span></td>
+    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
     <td class="tg-abip" rowspan="2"></td>
   </tr>
   <tr>
     <td class="tg-c3ow"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/131128" target="_blank" rel="noopener noreferrer">주식 가격</a></td>
     <td class="tg-c3ow"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%EC%A3%BC%EC%8B%9D%EA%B0%80%EA%B2%A9.js">풀이</a></td>
-    <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">🏃‍♂️</span></td>
+    <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
+  </tr>
+  <tr>
+    <td class="tg-abip" rowspan="2">28주차<br>(9. 10 ~ 9. 16)</td>
+    <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/118667">두 큐 합 같게 만들기</a></td>
+    <td class="tg-abip"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%EB%91%90_%ED%81%90_%ED%95%A9_%EA%B0%99%EA%B2%8C_%EB%A7%8C%EB%93%A4%EA%B8%B0.js">풀이</a></td>
+    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
+    <td class="tg-abip" rowspan="2"></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/17683#" target="_blank" rel="noopener noreferrer">방금그곡</a></td>
+    <td class="tg-c3ow"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%EB%B0%A9%EA%B8%88%EA%B7%B8%EA%B3%A1.js">풀이</a></td>
+    <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
+  </tr>
+  <tr>
+    <td class="tg-abip" rowspan="2">29주차<br>(9. 17 ~ 9. 23)</td>
+    <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/60058">괄호 변환</a></td>
+    <td class="tg-abip"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%EA%B4%84%ED%98%B8_%EB%B3%80%ED%99%98.js">풀이</a></td>
+    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
+    <td class="tg-abip" rowspan="2"></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/67257" target="_blank" rel="noopener noreferrer">수식 최대화</a></td>
+    <td class="tg-c3ow"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%EC%88%98%EC%8B%9D_%EC%B5%9C%EB%8C%80%ED%99%94.js">풀이</a></td>
+    <td class="tg-c3ow"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
+  </tr>
+  <tr>
+    <td class="tg-abip">30주차<br>(9. 24 ~ 9. 30)</td>
+    <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/42890">후보키</a></td>
+    <td class="tg-abip"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%ED%9B%84%EB%B3%B4%ED%82%A4.js">풀이</a></td>
+    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
+  </tr>
+  <tr>
+    <td class="tg-abip">31주차<br>(10. 1 ~ 10. 7)</td>
+    <td class="tg-abip"><a href="https://school.programmers.co.kr/learn/courses/30/lessons/152996">시소 짝꿍</a></td>
+    <td class="tg-abip"><a href="https://github.com/Gamangjum-lihou/coding-test-study/blob/main/level-2/%EC%8B%9C%EC%86%8C_%EC%A7%9D%EA%BF%8D.js">풀이</a></td>
+    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">✅</span></td>
+  </tr>
+  <tr>
+    <td class="tg-abip">32주차<br>(10. 15 ~ 10. 21)</td>
+    <td class="tg-abip"><a href="">행렬 테두리 회전하기</a></td>
+    <td class="tg-abip"><a href="">풀이</a></td>
+    <td class="tg-abip"><span style="font-weight:var(--base-text-weight-normal, 400);font-style:normal">🏃‍♂️</span></td>
   </tr>
 </tbody>
 </table>
