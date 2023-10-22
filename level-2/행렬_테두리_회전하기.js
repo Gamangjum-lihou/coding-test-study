@@ -62,6 +62,42 @@ function rotate(query, board) {
  * 이보리
  */
 
+function solution(rows, columns, queries) {
+    const answer = [];
+    // 2차원 배열 생성
+    const matrix = Array.from({ length: rows }, (_, rowIndex) => {
+        return Array.from(
+            { length: columns },
+            (_, columnIndex) => columnIndex + 1 + rows * rowIndex,
+        );
+    });
+    
+    queries.forEach((query) => {
+        // query의 각 값 - 1 해서 계산하기 용이하게 함
+        const [startX, startY, endX, endY] = query.map(position => position - 1);
+        // 회전한 값들을 저장
+        const rotatedMatrix = [];
+        
+        for (let i = 0; i < endY - startY; i++) rotatedMatrix.push(matrix[startX][startY + i]);
+        for (let i = 0; i < endX - startX; i++) rotatedMatrix.push(matrix[startX + i][endY]);
+        for (let i = 0; i < endY - startY; i++) rotatedMatrix.push(matrix[endX][endY - i]);
+        for (let i = 0; i < endX - startX; i++) rotatedMatrix.push(matrix[endX - i][startY]);
+        
+        // rotatedMatrix의 마지막 값을 첫 요소로 넣어주어 회전시킴
+        rotatedMatrix.unshift(rotatedMatrix.pop());
+        // rotatedMatrix의 최소값을 answer에 저장
+        answer.push(Math.min(...rotatedMatrix))
+        
+        // 회전한 rotatedMatrix 값을 matrix에 할당
+        for (let i = 0; i < endY - startY; i++) matrix[startX][startY + i] = rotatedMatrix.shift();
+        for (let i = 0; i < endX - startX; i++) matrix[startX + i][endY] = rotatedMatrix.shift();
+        for (let i = 0; i < endY - startY; i++) matrix[endX][endY - i] = rotatedMatrix.shift();
+        for (let i = 0; i < endX - startX; i++) matrix[endX - i][startY] = rotatedMatrix.shift();
+    });
+    
+    return answer;
+}
+
 /*
  * 신현호
  */
