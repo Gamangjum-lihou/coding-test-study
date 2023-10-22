@@ -4,6 +4,60 @@
  * 강철원
  */
 
+function solution(rows, columns, queries) {
+    // 1 ~ (r*c) 까지 이중 배열로 생성
+    const board = Array.from({length : rows}, (_,index) => {
+        return Array.from({length : columns}, (_, i) => (index*columns + 1) + i )
+    })
+    const answer = queries.reduce((acc, query) => {
+        acc.push(rotate(query,board)) 
+        return acc
+    },[])
+
+    return answer
+}
+
+function rotate(query, board) {
+
+    // 배열은 0부터 시작하기에 -1
+    const [r1, c1, r2 ,c2] = query.map((coordinate) => coordinate - 1)
+    
+    const saveStart = board[r1][c1];
+    let min = saveStart
+    const current = board
+    const below = board
+    const before = board
+    const above = board
+    
+    // 왼쪽 
+    for(let i = r1; i < r2; i++) {    
+        current[i][c1] = below[i+1][c1]
+        min = Math.min(min, current[i][c1])
+    }
+    
+    // 위쪽
+    for(let i = c1; i < c2; i++) {
+        current[r2][i]  = before[r2][i+1]
+        min = Math.min(min, current[r2][i])
+    }
+    
+    // 오른쪽
+    for(let i = r2; i > r1; i--) {
+        current[i][c2] = above[i-1][c2]
+        min = Math.min(min, current[i][c2])
+    }
+    
+    // 아래쪽
+    for(let i = c2; i > c1; i--) {
+        current[r1][i]= before[r1][i-1]
+        min = Math.min(min, current[r1][i])
+    }
+    
+    board[r1][c1+1] = saveStart
+    
+    return min
+}
+
 /*
  * 이보리
  */
